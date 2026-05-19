@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="BrainSpark - Care-Labs">
+  <title>PulseReport | Care-Labs</title>
+  <link rel="canonical" href="https://github.com/BrainSpark-upc/Landing-Page">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Organization",
+      "name": "PulseReport",
+      "alternateName": "Care-Labs",
+      "url": "https://github.com/BrainSpark-upc/Landing-Page",
+      "email": "contacto@pulsereport.pe",
+      "areaServed": "PE"
+    }
+  </script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" id="skiplink">Saltar al contenido principal</a>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Navegación Principal">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a class="logo" id="logoLink" href="#" aria-label="Ir al inicio">
+          <img class="logo-image" src="public/logo.png" alt="Logo PulseReport">
+          <span class="logo-text">PulseReport</span>
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#product-demo">Plataforma</a></li>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#how-it-works">¿Cómo funciona?</a></li>
+          <li><a href="#benefits">Beneficios</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
+          <li><a href="team">Nosotros</a></li>
+        </ul>
+        <div class="nav-header-end">
+          <div class="language-swicher" role="group" aria-label="Idioma">
+            <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">
+              <span class="lang-btn__flag" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <clipPath id="flag-uk-clip"><circle cx="12" cy="12" r="11.5"/></clipPath>
+                  </defs>
+                  <g clip-path="url(#flag-uk-clip)">
+                    <!-- Blue background -->
+                    <rect width="24" height="24" fill="#012169"/>
+                    <!-- White diagonals (X) -->
+                    <line x1="0" y1="0" x2="24" y2="24" stroke="#ffffff" stroke-width="4.8"/>
+                    <line x1="24" y1="0" x2="0" y2="24" stroke="#ffffff" stroke-width="4.8"/>
+                    <!-- Red diagonals (St Patrick's cross) -->
+                    <line x1="0" y1="0" x2="24" y2="24" stroke="#C8102E" stroke-width="2"/>
+                    <line x1="24" y1="0" x2="0" y2="24" stroke="#C8102E" stroke-width="2"/>
+                    <!-- White cross -->
+                    <rect x="10" y="0" width="4" height="24" fill="#ffffff"/>
+                    <rect x="0" y="10" width="24" height="4" fill="#ffffff"/>
+                    <!-- Red cross (St George's cross) -->
+                    <rect x="10.8" y="0" width="2.4" height="24" fill="#C8102E"/>
+                    <rect x="0" y="10.8" width="24" height="2.4" fill="#C8102E"/>
+                  </g>
+                  <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(15,23,42,0.18)"/>
+                </svg>
+              </span>
+              <span class="lang-btn__label">EN</span>
+            </button>
+            <button type="button" class="lang-btn active" data-lang="es" aria-pressed="false">
+              <span class="lang-btn__flag" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <clipPath id="flag-es-clip"><circle cx="12" cy="12" r="11.5"/></clipPath>
+                  </defs>
+                  <g clip-path="url(#flag-es-clip)">
+                    <rect width="24" height="24" fill="#aa151b"/>
+                    <rect y="6" width="24" height="12" fill="#f1bf00"/>
+                  </g>
+                  <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(15,23,42,0.18)"/>
+                </svg>
+              </span>
+              <span class="lang-btn__label">ES</span>
+            </button>
+          </div>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toogle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-brand"><span class="hero-title__before">Pulse </span><span class="hero-title__accent">Report</span></h1>
+          <h2 class="hero-subtitle"><span class="hero-subtitle__before">Tu solución integral para el monitoreo de la salud cardiovascular.</span></h2>
+          <p class="hero-description">Centraliza traspasos SBAR, signos vitales, tratamientos y eventos críticos en la sala quirúrgica en una sola plataforma segura, clara y accesible en tiempo real.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" id="demoBtn" href="https://pulsereport-frontend.web.app/">Visualizar Demo</a>
+            <a class="btn btn-secondary" id="how-it-workdsBtn" href="#how-it-works">Ver cómo funciona</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who is it for? -->
+    <section class="who-is-it-for" id="who-is-it-for">
+      <div class="container">
+        <h2 class="section-title">¿A quién va dirigido PulseReport?</h2>
+        <p class="section-description">PulseReport está diseñado para profesionales de la salud, hospitales y clínicas que buscan mejorar el monitoreo de la salud cardiovascular de sus pacientes, optimizar la comunicación en la sala quirúrgica y garantizar una atención de calidad.</p>
+        <div class="who-is-it-for__cards">
+          <div class="card">
+            <h3 class="card-title">Profesionales de la Salud</h3>
+            <p class="card-description">Médicos, enfermeros y personal sanitario que necesitan una herramienta eficiente para monitorear signos vitales y eventos críticos en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+      </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <p>&copy; 2026 PulseReport. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
