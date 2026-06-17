@@ -683,54 +683,113 @@
         </div>
     </section>
     <!--Team-->
-    <section class="team" id="team">
+    <section class="team" id="team" aria-labelledby="team-heading">
+        <div class="team-bg" aria-hidden="true">
+            <span class="team-bg__blob team-bg__blob--1"></span>
+            <span class="team-bg__blob team-bg__blob--2"></span>
+        </div>
         <div class="container">
-            <h2 class="section-title">Nuestro equipo</h2>
-            <p class="team-intro">
-                Detrás de Care-Labs hay un equipo comprometido con mejorar la forma en que se gestiona la información clínica día a día.
-            </p>
 
-            <div class="team-grid">
-                <article class="team-card">
-                    <div class="team-card-photo">
-                        <img src="assets/Adrian-photo.jpg" alt="Adrian Rios" loading="lazy" decoding="async">
-                    </div>
-                    <div class="team-card-footer">
-                        <p class="team-role">Líder de proyecto</p>
-                        <h3 class="team-name">Adrian Rios</h3>
-                    </div>
-                </article>
-
-                <article class="team-card">
-                    <div class="team-card-photo">
-                        <img src="assets/Alex-photo.jpg" alt="Alexander Aliaga" loading="lazy" decoding="async">
-                    </div>
-                    <div class="team-card-footer">
-                        <p class="team-role">Miembro</p>
-                        <h3 class="team-name">Alexander Aliaga</h3>
-                    </div>
-                </article>
-
-                <article class="team-card">
-                    <div class="team-card-photo">
-                        <img src="assets/Anhelo-photo.jpg" alt="Anhelo" loading="lazy" decoding="async">
-                    </div>
-                    <div class="team-card-footer">
-                        <p class="team-role">Miembro</p>
-                        <h3 class="team-name">Anhelo</h3>
-                    </div>
-                </article>
-
-                <article class="team-card">
-                    <div class="team-card-photo">
-                        <img src="assets/Johan-photo.png" alt="Johan" loading="lazy" decoding="async">
-                    </div>
-                    <div class="team-card-footer">
-                        <p class="team-role">Miembro</p>
-                        <h3 class="team-name">Johan</h3>
-                    </div>
-                </article>
+            <!-- Header -->
+            <div class="team-header reveal-on-scroll">
+                <p class="team-eyebrow" data-i18n="team.eyebrow">The people behind it</p>
+                <h2 class="section-title team-heading" id="team-heading" data-i18n="team.title">Our team</h2>
+                <p class="team-intro" data-i18n="team.subtitle">
+                    Behind BrainSpark there is a team committed to improving how clinical information is managed every day.
+                </p>
             </div>
+
+            <!-- Cards -->
+            <div class="team-grid" role="list">
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="0" role="listitem" tabindex="0"
+                         aria-label="Adrian Rios, Team Lead">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Adrian-photo.jpg"
+                                alt="Adrian Rios"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.1.role">Team Leader</p>
+                        <h3 class="team-card__name" data-i18n="team.1.name">Adrian Rios</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.1.tag">Leadership</span>
+                    </div>
+                </article>
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="100" role="listitem" tabindex="0"
+                         aria-label="Alexander Aliaga, Developer">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Alex-photo.jpg"
+                                alt="Alexander Aliaga"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.2.role">Member</p>
+                        <h3 class="team-card__name" data-i18n="team.2.name">Alexander Aliaga</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.2.tag">Development</span>
+                    </div>
+                </article>
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="200" role="listitem" tabindex="0"
+                         aria-label="Anhelo, Member">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Anhelo-photo.jpg"
+                                alt="Anhelo"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.3.role">Member</p>
+                        <h3 class="team-card__name" data-i18n="team.3.name">Anhelo</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.3.tag">Design & UX</span>
+                    </div>
+                </article>
+
+                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="listitem" tabindex="0"
+                         aria-label="Johan, Member">
+                    <div class="team-card__photo-wrap">
+                        <img
+                                class="team-card__photo"
+                                src="assets/Johan-photo.png"
+                                alt="Johan"
+                                width="400" height="440"
+                                loading="lazy"
+                                decoding="async"
+                        >
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.4.role">Member</p>
+                        <h3 class="team-card__name" data-i18n="team.4.name">Johan</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.4.tag">Engineering</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="team-footer reveal-on-scroll">
+                <p class="team-footer__text" data-i18n="team.footer.text">
+                    A multidisciplinary team united by one goal: making clinical information work better for the people who need it most.
+                </p>
+            </div>
+
         </div>
     </section>
     <!--FAQ-->

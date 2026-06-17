@@ -301,7 +301,19 @@
       });
     });
   }
-
+  /* Team section — keyboard interaction */
+  function initTeamCards() {
+    document.querySelectorAll('.team-card').forEach((card) => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          // Brief visual pulse via temporary class
+          card.classList.add('is-focused');
+          setTimeout(() => card.classList.remove('is-focused'), 500);
+        }
+      });
+    });
+  }
   //Boot function
   function boot() {
     initMobileNav();
@@ -315,6 +327,7 @@
     initProblemCards();
     initStepCards();
     initFeatureCards();
+    initTeamCards();
   }
 
   if (document.readyState === 'loading') {
