@@ -8,6 +8,7 @@
     <meta name="author" content="BrainSpark">
     <meta name="description" content="PulseReport es una plataforma para centralizar traspasos SBAR, signos vitales, tratamientos y eventos críticos en entornos clínicos." />
     <meta name="keywords" content="PulseReport, Care-Labs, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
+    <meta name="keywords" content="PulseReport, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica">
     <meta name="theme-color" content="#0066CC" />
 
     <title>PulseReport | BrainSpark</title>
@@ -24,7 +25,7 @@
             "@context": "https://schema.org/",
             "@type": "Organization",
             "name": "PulseReport",
-            "alternateName": "Care-Labs",
+            "alternateName": "BrainSpark",
             "url": "https://pulsereport-frontend.web.app/",
             "email": "contacto@pulsereport.pe",
             "areaServed": "PE"
@@ -39,16 +40,17 @@
         <div class="nav-wrapper">
             <a class="logo" id="logoLink" href="#" aria-label="Ir al inicio">
                 <img class="logo-image" src="assets/logo.png" alt="Logo PulseReport">
+
                 <span class="logo-text">PulseReport</span>
             </a>
 
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#product-demo">Plataforma</a></li>
-                <li><a href="#features">Características</a></li>
-                <li><a href="#how-it-works">¿Cómo funciona?</a></li>
-                <li><a href="#benefits">Beneficios</a></li>
-                <li><a href="#faq">Preguntas Frecuentes</a></li>
-                <li><a href="#team">Nosotros</a></li>
+                <li><a href="#product-demo" data-i18n="nav.platform">Plataforma</a></li>
+                <li><a href="#features" data-i18n="nav.features">Características</a></li>
+                <li><a href="#how-it-works" data-i18n="nav.how-it-works">¿Cómo funciona?</a></li>
+                <li><a href="#benefits" data-i18n="nav.benefits">Beneficios</a></li>
+                <li><a href="#faq" data-i18n="nav.faq">Preguntas Frecuentes</a></li>
+                <li><a href="#team" data-i18n="nav.team">Nosotros</a></li>
             </ul>
 
             <div class="nav-header-end">
@@ -108,15 +110,149 @@
 
 <main id="main-content">
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+        <!-- Decorative background pulse rings
+        <div class="hero-bg-rings" aria-hidden="true">
+            <span class="hero-ring hero-ring--1"></span>
+            <span class="hero-ring hero-ring--2"></span>
+            <span class="hero-ring hero-ring--3"></span>
+        </div>
+        -->
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-brand"><span class="hero-title__before">Pulse </span><span class="hero-title__accent">Report</span></h1>
-                <h2 class="hero-subtitle"><span class="hero-subtitle__before">Tu solución integral para el monitoreo de la salud cardiovascular.</span></h2>
-                <p class="hero-description">Centraliza traspasos SBAR, signos vitales, tratamientos y eventos críticos en la sala quirúrgica en una sola plataforma segura, clara y accesible en tiempo real.</p>
-                <div class="hero-buttons">
-                    <a class="btn btn-primary" id="demoBtn" href="https://pulsereport-frontend.web.app/">Visualizar Demo</a>
-                    <a class="btn btn-secondary" id="how-it-worksBtn" href="#how-it-works">Ver cómo funciona</a>
+            <div class="hero-layout">
+                <!-- Left: Text content -->
+                <div class="hero-content">
+                    <!-- Eyebrow / trust badge
+                    <p class="hero-eyebrow reveal-on-scroll" data-hero-anim="true" data-i18n="hero.eyebrow">
+                        Clinical Communication Platform
+                    </p>
+                    -->
+                    <!-- Main headline -->
+                    <h1 class="hero-brand" id="hero-heading" data-hero-anim="true">
+                        <span class="hero-title__before" data-i18n="hero.title.before">Pulse </span><span class="hero-title__accent" data-i18n="hero.title.accent">Report</span>
+                    </h1>
+
+                    <!-- Supporting subtitle -->
+                    <h2 class="hero-subtitle" data-hero-anim="true">
+                        <span class="hero-subtitle__before" data-i18n="hero.title">Prevent clinical information loss between shifts</span>
+                    </h2>
+
+                    <!-- Value proposition -->
+                    <p class="hero-description" data-hero-anim="true" data-i18n="hero.subtitle">
+                        Centralize SBAR handoffs, vital signs, treatments, and critical events in one secure, clear, and real-time accessible platform.
+                    </p>
+
+                    <!-- Social proof micro-badges -->
+                    <div class="hero-trust" data-hero-anim="true" aria-label="Key platform highlights">
+                        <span class="hero-trust__badge">
+                            <svg class="hero-trust__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-i18n="hero.badge.1">SBAR Digital</span>
+                        </span>
+                        <span class="hero-trust__badge">
+                            <svg class="hero-trust__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-i18n="hero.badge.2">Real-time</span>
+                        </span>
+                        <span class="hero-trust__badge">
+                            <svg class="hero-trust__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span data-i18n="hero.badge.3">Audit trail</span>
+                        </span>
+                    </div>
+
+                    <!-- CTA buttons -->
+                    <div class="hero-buttons" data-hero-anim="true">
+                        <a class="btn btn-primary" id="demoBtn"
+                           href="https://pulsereport-frontend.web.app/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-i18n="cta.demo"
+                           aria-label="Open PulseReport web application demo">
+                            Request demo
+                        </a>
+                        <a class="btn btn-secondary" id="how-it-worksBtn"
+                           href="#how-it-works"
+                           data-i18n="cta.how-it-works">
+                            See how it works
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Clinical visual element
+                <aside class="hero-visual" aria-label="Platform visual summary" data-hero-anim="true">
+                    <div class="hero-card" role="img" aria-label="PulseReport dashboard preview">
+                        <-- Card header
+                        <div class="hero-card__header">
+                            <span class="hero-card__dot hero-card__dot--red" aria-hidden="true"></span>
+                            <span class="hero-card__dot hero-card__dot--yellow" aria-hidden="true"></span>
+                            <span class="hero-card__dot hero-card__dot--green" aria-hidden="true"></span>
+                            <span class="hero-card__title" aria-hidden="true">PulseReport</span>
+                        </div>
+
+                        <-- Patient row mock
+                        <div class="hero-card__body">
+                            <p class="hero-card__eyebrow" data-i18n="hero.card.eyebrow">Active shift handoff</p>
+
+                            <-- SBAR mini-row --
+                            <div class="hero-card__sbar-row" aria-hidden="true">
+                                <span class="hero-card__sbar-badge">S</span>
+                                <span class="hero-card__sbar-badge">B</span>
+                                <span class="hero-card__sbar-badge">A</span>
+                                <span class="hero-card__sbar-badge">R</span>
+                                <span class="hero-card__sbar-status hero-card__sbar-status--complete" data-i18n="hero.card.status">Complete</span>
+                            </div>
+
+                            <-- Vitals mini-grid --
+                            <div class="hero-card__vitals" aria-label="Sample vital signs">
+                                <div class="hero-card__vital">
+                                    <span class="hero-card__vital-label" data-i18n="hero.card.hr">HR</span>
+                                    <span class="hero-card__vital-value">78 <small>bpm</small></span>
+                                </div>
+                                <div class="hero-card__vital">
+                                    <span class="hero-card__vital-label" data-i18n="hero.card.bp">BP</span>
+                                    <span class="hero-card__vital-value">120/80</span>
+                                </div>
+                                <div class="hero-card__vital">
+                                    <span class="hero-card__vital-label" data-i18n="hero.card.spo2">SpO2</span>
+                                    <span class="hero-card__vital-value">98<small>%</small></span>
+                                </div>
+                                <div class="hero-card__vital">
+                                    <span class="hero-card__vital-label" data-i18n="hero.card.temp">Temp</span>
+                                    <span class="hero-card__vital-value">36.7<small>°C</small></span>
+                                </div>
+                            </div>
+
+                            <-- Pulse line decoration --
+                            <div class="hero-card__pulse-line" aria-hidden="true">
+                                <svg viewBox="0 0 200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polyline
+                                      points="0,20 30,20 45,8 55,32 65,5 75,35 85,20 120,20 135,14 145,26 155,20 200,20"
+                                      fill="none"
+                                      stroke="#14b8a6"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      class="hero-card__ecg-line"
+                                    />
+                                </svg>
+                            </div>
+
+                            <-- Audit trail tag --
+                            <div class="hero-card__audit" aria-hidden="true">
+                                <svg class="hero-card__audit-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 3.75a.75.75 0 00-1.5 0v3.5c0 .414.336.75.75.75h2.5a.75.75 0 000-1.5H8.75V4.75z"/></svg>
+                                <span data-i18n="hero.card.audit">Audit log active</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                -->
+                <!-- Floating stethoscope image -->
+                <div class="hero-visual__img-wrap" aria-hidden="true">
+                    <img src="assets/stethoscope-with-heart-drawing.png"
+                         alt=""
+                         class="hero-visual__img"
+                         width="1000"
+                         height="1000"
+                         loading="eager"
+                         decoding="async">
                 </div>
             </div>
         </div>

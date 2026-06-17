@@ -4,20 +4,15 @@
   "nav.benefits": "Benefits",
   "nav.faq": "FAQ",
   "nav.contact": "Contact",
-
   "cta.demo": "Request demo",
   "cta.how-it-works": "See how it works",
-
   "accessibility.logo": "Care-Labs logo",
   "accessibility.open-menu": "Open menu",
-
   "hero.brand": "PulseReport",
   "hero.title": "Prevent clinical information loss between shifts",
   "hero.subtitle": "Centralize SBAR handoffs, vital signs, treatments, and critical events in one secure, clear, and real-time accessible platform.",
-
   "problem.title": "The problem we solve",
   "problem.desc": "In many clinical environments, patient information is still scattered across paper notes, chats, partial records, or manual processes. This can lead to omissions, delays, and loss of continuity of care. PulseReport centralizes clinical communication and event traceability to help healthcare staff work with more order, clarity, and safety.",
-
   "audience.title": "Who is it for?",
   "audience.1.title": "Hospitals",
   "audience.1.desc": "Institutions that need to improve continuity of care and clinical traceability across departments and shifts.",
@@ -25,7 +20,6 @@
   "audience.2.desc": "Centers looking to digitize critical clinical processes and better organize patient information.",
   "audience.3.title": "Cardiovascular nursing areas",
   "audience.3.desc": "Teams that need to record SBAR, vital signs, treatments, and clinical events with greater order and speed.",
-
   "steps.title": "How it works in 3 steps",
   "steps.1.title": "Record clinical information",
   "steps.1.desc": "Register SBAR handoffs, vital signs, treatments, and clinical events in one single platform.",
@@ -33,7 +27,6 @@
   "steps.2.desc": "Access updated information in real time to support continuity of care across shifts and departments.",
   "steps.3.title": "Trace and audit",
   "steps.3.desc": "Keep a clear history of actions, events, and decisions to improve control, follow-up, and safety.",
-
   "features.title": "Key features",
   "features.1.title": "Digital SBAR",
   "features.1.desc": "Standardizes information handoffs between shifts and care areas.",
@@ -47,7 +40,6 @@
   "features.5.desc": "Centralizes relevant information for better consultation and follow-up.",
   "features.6.title": "Immutable audit log",
   "features.6.desc": "Maintain traceability of critical events and actions within the platform.",
-
   "benefits.title": "Benefits",
   "benefits.1": "Reduces information loss between shifts.",
   "benefits.2": "Makes real-time clinical follow-up easier.",
@@ -57,7 +49,6 @@
   "benefits.tag.1": "Secure",
   "benefits.tag.2": "Scalable",
   "benefits.tag.3": "Real-time",
-
   "faq.title": "Frequently asked questions",
   "faq.1.q": "Is PulseReport only focused on cardiovascular nursing?",
   "faq.1.a": "It is especially designed for that environment, but its structure can be adapted to other specialized clinical contexts.",
@@ -67,7 +58,6 @@
   "faq.3.a": "Yes, it is aimed at hospitals, private clinics, specialized centers, and healthcare professionals who need order and traceability.",
   "faq.4.q": "What service model does Care-Labs offer?",
   "faq.4.a": "Care-Labs proposes a subscription-based SaaS model, with the ability to scale according to each institution’s needs.",
-
   "testimonials.title": "What people say about Care-Labs",
   "testimonials.subtitle": "Healthcare professionals already seeing improvements",
   "testimonials.1.text": "It allows us to record and review critical information with better organization between shifts.",
@@ -79,7 +69,6 @@
   "testimonials.3.text": "The proposal conveys trust and order. It clearly feels designed for continuity of care.",
   "testimonials.3.name": "Lucía Portocarrero",
   "testimonials.3.role": "Pilot user",
-
   "team.title": "Our team",
   "team.subtitle": "Behind Care-Labs there is a team committed to improving how clinical information is managed every day.",
   "team.1.name": "Adrian Rios",
@@ -90,7 +79,6 @@
   "team.3.role": "Member",
   "team.4.name": "Johan",
   "team.4.role": "Member",
-
   "contact.title": "Contact us",
   "contact.desc": "Request a demo and discover how PulseReport can help your institution improve clinical continuity, traceability, and real-time follow-up.",
   "contact.name": "Name",
@@ -98,8 +86,22 @@
   "contact.institution": "Institution",
   "contact.message": "Message",
   "contact.submit": "Send message",
-
   "footer.desc": "Digital solutions to optimize critical clinical processes, strengthen traceability, and improve continuity of care.",
   "footer.nav.home": "Home",
-  "footer.copy": "© 2026 Care-Labs. All rights reserved."
+  "footer.copy": "© 2026 BrainSpark-Labs. All rights reserved.",
+  "hero.eyebrow": "Clinical Communication Platform",
+  "hero.title.before": "Pulse ",
+  "hero.title.accent": "Report",
+  "hero.badge.1": "SBAR Digital",
+  "hero.badge.2": "Real-time",
+  "hero.badge.3": "Audit trail",
+  "hero.card.eyebrow": "Active shift handoff",
+  "hero.card.status": "Complete",
+  "hero.card.hr": "HR",
+  "hero.card.bp": "BP",
+  "hero.card.spo2": "SpO₂",
+  "hero.card.temp": "Temp",
+  "hero.card.audit": "Audit log active",
+  "nav.platform": "Platform",
+  "nav.team": "About us"
 }

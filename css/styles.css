@@ -1485,3 +1485,494 @@ section {
         gap: 1.4rem;
     }
 }
+
+/* HERO */
+
+/* Layout override: two-column on desktop */
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 420px);
+    gap: 3rem 3.5rem;
+    align-items: center;
+}
+
+/* ── Left: text alignment switches to left-aligned on two-column ── */
+.hero-layout .hero-content {
+    text-align: left;
+    margin: 0;
+    max-width: 640px;
+}
+
+.hero-layout .hero-description {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.hero-layout .hero-buttons {
+    justify-content: flex-start;
+}
+
+/* Eyebrow pill
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1rem;
+    background: rgba(20, 184, 166, 0.18);
+    color: #5eead4;
+    border: 1px solid rgba(94, 234, 212, 0.3);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+*/
+
+/* Trust badges  */
+.hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 1.75rem;
+}
+
+.hero-trust__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+}
+
+.hero-trust__icon {
+    width: 14px;
+    height: 14px;
+    color: #14b8a6;
+    flex-shrink: 0;
+}
+
+/* ── Background decorative rings
+.hero-bg-rings {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(20, 184, 166, 0.12);
+    animation: hero-ring-pulse 6s ease-in-out infinite;
+}
+
+.hero-ring--1 {
+    width: 420px;
+    height: 420px;
+    right: -80px;
+    top: -100px;
+    animation-delay: 0s;
+}
+
+.hero-ring--2 {
+    width: 660px;
+    height: 660px;
+    right: -200px;
+    top: -220px;
+    animation-delay: 1.5s;
+}
+
+.hero-ring--3 {
+    width: 900px;
+    height: 900px;
+    right: -320px;
+    top: -340px;
+    animation-delay: 3s;
+}
+
+@keyframes hero-ring-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.08; transform: scale(1.04); }
+}
+*/
+/* ── Clinical card (right column)
+.hero-visual {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.hero-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 20px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+            0 24px 60px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* Card header — fake browser chrome
+.hero-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-card__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.hero-card__dot--red    { background: #ff5f57; }
+.hero-card__dot--yellow { background: #ffbd2e; }
+.hero-card__dot--green  { background: #28c840; }
+
+.hero-card__title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    opacity: 0.7;
+}
+
+/* Card body
+.hero-card__body {
+    padding: 1.15rem 1.2rem 1.1rem;
+}
+
+.hero-card__eyebrow {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5eead4;
+    margin-bottom: 0.75rem;
+}
+
+/* SBAR row
+.hero-card__sbar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-card__sbar-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(20, 184, 166, 0.22);
+    border: 1px solid rgba(20, 184, 166, 0.4);
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #5eead4;
+}
+
+.hero-card__sbar-status {
+    margin-left: auto;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.hero-card__sbar-status--complete {
+    background: rgba(34, 197, 94, 0.18);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+/* Vitals grid
+.hero-card__vitals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.hero-card__vital {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.5rem 0.3rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-card__vital-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.hero-card__vital-value {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #f0fdf4;
+    line-height: 1;
+}
+
+.hero-card__vital-value small {
+    font-size: 0.62rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+/* ECG pulse line
+.hero-card__pulse-line {
+    margin-bottom: 0.85rem;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0 6px;
+}
+
+.hero-card__pulse-line svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-card__ecg-line {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: ecg-draw 2.4s ease forwards 1s;
+}
+
+@keyframes ecg-draw {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Audit tag
+.hero-card__audit {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.75rem;
+    background: rgba(15, 118, 110, 0.22);
+    border: 1px solid rgba(20, 184, 166, 0.28);
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #5eead4;
+}
+
+.hero-card__audit-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+*/
+/* Floating stethoscope image */
+.hero-visual__img-wrap {
+    position: absolute;
+    bottom: 45px;
+    right: -40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-visual__img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    opacity: 0.35;
+    filter: drop-shadow(0 4px 18px rgba(20, 184, 166, 0.35));
+    animation: hero-float 5s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+    0%, 100% { transform: translateY(0px) rotate(-4deg); }
+    50%       { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* Wave bottom divider
+.hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 2;
+}
+
+.hero-wave svg {
+    width: 100%;
+    height: 48px;
+}
+
+/* Extra hero bottom padding to clear the wave
+.hero {
+    padding-bottom: clamp(4.5rem, 9vh, 6rem);
+}
+*/
+/* Entrance animations */
+.hero-anim-in {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: hero-slide-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hero-slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating card shimmer */
+.hero-visual--float .hero-card {
+    animation: hero-card-float 5.5s ease-in-out infinite;
+}
+
+@keyframes hero-card-float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar active link  */
+.nav-menu a.is-active {
+    color: #0f766e;
+    background-color: rgba(15, 118, 110, 0.08);
+}
+
+/* Navbar scrolled shadow */
+.navbar--scrolled {
+    box-shadow: 0 6px 28px rgba(15, 23, 42, 0.13);
+}
+
+/* Hamburger*/
+.menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+.menu-toggle span {
+    transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+/* Contact form error state */
+.field--error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14) !important;
+}
+
+/* Hero Responsive*/
+
+@media (max-width: 1080px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero-layout .hero-content {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .hero-layout .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-layout .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-trust {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        justify-content: center;
+    }
+
+    .hero-card {
+        max-width: 420px;
+    }
+
+    .hero-visual__img-wrap {
+        right: -10px;
+        bottom: -20px;
+    }
+
+    .hero-visual__img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-ring--1 { display: none; }
+    .hero-ring--2 { right: -120px; }
+    .hero-ring--3 { right: -240px; }
+}
+
+@media (max-width: 600px) {
+    .hero-card__vitals {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-visual__img-wrap {
+        display: none;
+    }
+
+    .hero-wave svg {
+        height: 32px;
+    }
+
+    .hero-trust {
+        flex-direction: column;
+        align-items: center;
+    }
+}
