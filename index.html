@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <meta name="author" content="BrainSpark">
+    <meta name="author" content="Care-Labs">
     <meta name="description" content="PulseReport es una plataforma para centralizar traspasos SBAR, signos vitales, tratamientos y eventos críticos en entornos clínicos." />
-    <meta name="keywords" content="PulseReport, BrainSpark, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
-    <meta name="keywords" content="PulseReport, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica">
-    <meta name="theme-color" content="#0066CC" />
+    <meta name="keywords" content="PulseReport, Care-Labs, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
+    <meta name="theme-color" content="#0f766e" />
 
-    <title>PulseReport | BrainSpark</title>
+    <title>PulseReport | Care-Labs</title>
 
     <link rel="canonical" href="https://pulsereport-frontend.web.app/">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/pestana-logo.png" />
     <link rel="stylesheet" href="css/styles.css" />
 
@@ -25,7 +21,7 @@
             "@context": "https://schema.org/",
             "@type": "Organization",
             "name": "PulseReport",
-            "alternateName": "BrainSpark",
+            "alternateName": "Care-Labs",
             "url": "https://pulsereport-frontend.web.app/",
             "email": "contacto@pulsereport.pe",
             "areaServed": "PE"
@@ -33,13 +29,13 @@
     </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link" id="skiplink">Saltar al contenido principal</a>
+<a href="#main-content" class="skip-link" id="skiplink" data-i18n="accessibility.skip-content">Skip to main content</a>
 <!-- Navigation -->
-<nav class="navbar" aria-label="Navegación Principal">
+<nav class="navbar" data-i18n-aria="accessibility.primary-nav" aria-label="Primary navigation">
     <div class="container">
         <div class="nav-wrapper">
-            <a class="logo" id="logoLink" href="#" aria-label="Ir al inicio">
-                <img class="logo-image" src="assets/logo.png" alt="Logo PulseReport">
+            <a class="logo" id="logoLink" href="#" data-i18n-aria="accessibility.home" aria-label="Go to home">
+                <img class="logo-image" src="assets/logo.png" alt="Care-Labs" width="58" height="48" decoding="async">
 
                 <span class="logo-text">PulseReport</span>
             </a>
@@ -47,15 +43,15 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#product-demo" data-i18n="nav.platform">Plataforma</a></li>
                 <li><a href="#problem" data-i18n="nav.problem">El problema</a></li>
-                <li><a href="#features" data-i18n="nav.features">Características</a></li>
                 <li><a href="#how-it-works" data-i18n="nav.how-it-works">¿Cómo funciona?</a></li>
+                <li><a href="#features" data-i18n="nav.features">Características</a></li>
                 <li><a href="#benefits" data-i18n="nav.benefits">Beneficios</a></li>
-                <li><a href="#faq" data-i18n="nav.faq">Preguntas Frecuentes</a></li>
                 <li><a href="#team" data-i18n="nav.team">Nosotros</a></li>
+                <li><a href="#faq" data-i18n="nav.faq">Preguntas Frecuentes</a></li>
             </ul>
 
             <div class="nav-header-end">
-                <div class="language-swicher" role="group" aria-label="Idioma">
+                <div class="language-swicher" role="group" data-i18n-aria="accessibility.language" aria-label="Language">
                     <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">
                         <span class="lang-btn__flag" aria-hidden="true">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +79,7 @@
                         </span>
                         <span class="lang-btn__label">EN</span>
                     </button>
-                    <button type="button" class="lang-btn active" data-lang="es" aria-pressed="false">
+                    <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">
                         <span class="lang-btn__flag" aria-hidden="true">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
@@ -99,7 +95,7 @@
                         <span class="lang-btn__label">ES</span>
                     </button>
                 </div>
-                <button class="menu-toggle" id="menuToggle" aria-label="Toogle navigation menu">
+                <button type="button" class="menu-toggle" id="menuToggle" data-i18n-aria="accessibility.open-menu" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -144,7 +140,7 @@
                     </p>
 
                     <!-- Social proof micro-badges -->
-                    <div class="hero-trust" data-hero-anim="true" aria-label="Key platform highlights">
+                    <div class="hero-trust" data-hero-anim="true" data-i18n-aria="accessibility.highlights" aria-label="Key platform highlights">
                         <span class="hero-trust__badge">
                             <svg class="hero-trust__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                             <span data-i18n="hero.badge.1">SBAR Digital</span>
@@ -166,6 +162,7 @@
                            target="_blank"
                            rel="noopener noreferrer"
                            data-i18n="cta.demo"
+                           data-i18n-aria="accessibility.open-demo"
                            aria-label="Open PulseReport web application demo">
                             Request demo
                         </a>
@@ -262,29 +259,29 @@
     <!--Product-Demo-->
     <section class="product-demo" id="product-demo">
         <div class="container">
-            <h2 class="section-title product-demo__title">Plataforma y propuesta de valor</h2>
-            <p class="product-demo__lead">
+            <h2 class="section-title product-demo__title" data-i18n="platform.title">Plataforma y propuesta de valor</h2>
+            <p class="product-demo__lead" data-i18n="platform.lead">
                 PulseReport centraliza la información clínica clave para que el traspaso entre turnos sea más claro, rápido y confiable.
             </p>
 
             <div class="product-demo__value-grid">
                 <article class="value-card">
-                    <h3 class="value-card__label">Problema</h3>
-                    <p class="value-card__text">
+                    <h3 class="value-card__label" data-i18n="platform.card.1.title">Problema</h3>
+                    <p class="value-card__text" data-i18n="platform.card.1.desc">
                         La información clínica suele quedar dispersa en hojas, chats o registros parciales, lo que genera omisiones y pérdida de continuidad asistencial.
                     </p>
                 </article>
 
                 <article class="value-card">
-                    <h3 class="value-card__label">Para quién</h3>
-                    <p class="value-card__text">
+                    <h3 class="value-card__label" data-i18n="platform.card.2.title">Para quién</h3>
+                    <p class="value-card__text" data-i18n="platform.card.2.desc">
                         Hospitales, clínicas privadas y áreas de enfermería cardiovascular que necesitan registrar y consultar información crítica con orden.
                     </p>
                 </article>
 
                 <article class="value-card">
-                    <h3 class="value-card__label">Beneficio</h3>
-                    <p class="value-card__text">
+                    <h3 class="value-card__label" data-i18n="platform.card.3.title">Beneficio</h3>
+                    <p class="value-card__text" data-i18n="platform.card.3.desc">
                         Mejora la trazabilidad, reduce errores de traspaso y permite un seguimiento más seguro y oportuno del paciente.
                     </p>
                 </article>
@@ -377,7 +374,7 @@
 
             </div>
 
-            <div class="problem-callout reveal-on-scroll" role="note" aria-label="Key insight">
+            <div class="problem-callout reveal-on-scroll" role="note" data-i18n-aria="accessibility.key-insight" aria-label="Key insight">
                 <div class="problem-callout__inner">
                     <span class="problem-callout__icon" aria-hidden="true">
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
@@ -389,27 +386,36 @@
     </section>
 
     <!-- Who is it for? -->
-    <section class="who-is-it-for" id="who-is-it-for">
+    <section class="who-is-it-for" id="who-is-it-for" aria-labelledby="audience-heading">
         <div class="container">
-            <h2 class="section-title">¿A quién va dirigido PulseReport?</h2>
+            <h2 class="section-title" id="audience-heading" data-i18n="audience.title">¿A quién va dirigido PulseReport?</h2>
             <div class="cards-grid three-columns">
-                <article class="card">
-                    <h3 class="audience1">Hospitales</h3>
-                    <p class="audience1-description">
+                <article class="card audience-card reveal-on-scroll" data-reveal-delay="0" tabindex="0">
+                    <span class="audience-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M8 7h4M10 5v4M7 12h2m3 0h2M7 16h2m3 0h2M2 21h20M18 9h2a1 1 0 0 1 1 1v11"/></svg>
+                    </span>
+                    <h3 class="audience1" data-i18n="audience.1.title">Hospitales</h3>
+                    <p class="audience1-description" data-i18n="audience.1.desc">
                         Instituciones que necesitan mejorar la continuidad asistencial y la trazabilidad clínica entre áreas y turnos.
                     </p>
                 </article>
 
-                <article class="card">
-                    <h3 class="audience2">Clínicas privadas</h3>
-                    <p class="audience2-description">
+                <article class="card audience-card reveal-on-scroll" data-reveal-delay="90" tabindex="0">
+                    <span class="audience-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 12h6M12 9v6M8 18h2m4 0h2"/></svg>
+                    </span>
+                    <h3 class="audience2" data-i18n="audience.2.title">Clínicas privadas</h3>
+                    <p class="audience2-description" data-i18n="audience.2.desc">
                         Centros que buscan digitalizar procesos clínicos críticos y organizar mejor la información del paciente.
                     </p>
                 </article>
 
-                <article class="card">
-                    <h3 class="audience3-title">Áreas de enfermería cardiovascular</h3>
-                    <p class="audience3-description">
+                <article class="card audience-card reveal-on-scroll" data-reveal-delay="180" tabindex="0">
+                    <span class="audience-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/><path d="M7 12h3l1.2-2.4L13 15l1.2-3H17"/></svg>
+                    </span>
+                    <h3 class="audience3-title" data-i18n="audience.3.title">Áreas de enfermería cardiovascular</h3>
+                    <p class="audience3-description" data-i18n="audience.3.desc">
                         Equipos que requieren registrar SBAR, signos vitales, tratamientos y eventos clínicos con mayor orden y rapidez.
                     </p>
                 </article>
@@ -449,13 +455,24 @@
                     <div class="how-it-works-image-frame">
                         <div class="visual-summary">
                             <p class="visual-summary__eyebrow" data-i18n="steps.visual.eyebrow">Clinical flow</p>
-                            <ul class="visual-summary__list" role="list">
-                                <li data-i18n="steps.visual.1">SBAR</li>
-                                <li data-i18n="steps.visual.2">Vital signs</li>
-                                <li data-i18n="steps.visual.3">Treatments</li>
-                                <li data-i18n="steps.visual.4">Critical events</li>
-                                <li data-i18n="steps.visual.5">Traceability</li>
-                            </ul>
+                            <div class="visual-summary__viewport">
+                                <ul class="visual-summary__list" role="list" tabindex="0" data-i18n-aria="steps.visual.list.aria" aria-label="Clinical flow items">
+                                    <li data-i18n="steps.visual.1">SBAR</li>
+                                    <li data-i18n="steps.visual.2">Vital signs</li>
+                                    <li data-i18n="steps.visual.3">Treatments</li>
+                                    <li data-i18n="steps.visual.4">Critical events</li>
+                                    <li data-i18n="steps.visual.5">Traceability</li>
+                                </ul>
+                            </div>
+                            <div class="visual-summary__controls" data-i18n-aria="steps.visual.controls.aria" aria-label="Scroll controls">
+                                <button type="button" class="visual-summary__scroll-btn" data-scroll-direction="-1" data-i18n-aria="steps.visual.scroll-up" aria-label="Scroll up">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
+                                </button>
+                                <span class="visual-summary__position" aria-hidden="true"><span></span></span>
+                                <button type="button" class="visual-summary__scroll-btn" data-scroll-direction="1" data-i18n-aria="steps.visual.scroll-down" aria-label="Scroll down">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </aside>
@@ -695,15 +712,14 @@
                 <p class="team-eyebrow" data-i18n="team.eyebrow">The people behind it</p>
                 <h2 class="section-title team-heading" id="team-heading" data-i18n="team.title">Our team</h2>
                 <p class="team-intro" data-i18n="team.subtitle">
-                    Behind BrainSpark there is a team committed to improving how clinical information is managed every day.
+                    Behind Care-Labs is a team committed to improving how clinical information is managed every day.
                 </p>
             </div>
 
             <!-- Cards -->
             <div class="team-grid" role="list">
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="0" role="listitem" tabindex="0"
-                         aria-label="Adrian Rios, Team Lead">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="0" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -722,8 +738,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="100" role="listitem" tabindex="0"
-                         aria-label="Alexander Aliaga, Developer">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="100" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -742,8 +757,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="200" role="listitem" tabindex="0"
-                         aria-label="Anhelo, Member">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="200" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -762,8 +776,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="listitem" tabindex="0"
-                         aria-label="Johan, Member">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -782,7 +795,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="lisitem" tabindex="0" aria-label="Carlos, Member">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                         class="team-card__photo"
@@ -826,6 +839,7 @@
             <div
                     class="testimonials-track-wrap"
                     role="region"
+                    data-i18n-aria="testimonials.carousel.aria"
                     aria-label="Carrusel de testimonios"
                     aria-roledescription="carousel"
             >
@@ -833,6 +847,7 @@
                 <button
                         class="testimonials-nav testimonials-nav--prev"
                         id="testimonials-prev"
+                        data-i18n-aria="testimonials.prev.aria"
                         aria-label="Testimonio anterior"
                         aria-controls="testimonials-track"
                         disabled
@@ -854,10 +869,11 @@
                             data-reveal-delay="0"
                             role="listitem"
                             aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.1.aria"
                             aria-label="Testimonio 1 de 4"
                     >
                         <div class="testimonial-card__top">
-                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
                                 <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
                             </div>
                             <blockquote class="testimonial-card__quote">
@@ -884,10 +900,11 @@
                             data-reveal-delay="100"
                             role="listitem"
                             aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.2.aria"
                             aria-label="Testimonio 2 de 4"
                     >
                         <div class="testimonial-card__top">
-                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
                                 <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
                             </div>
                             <blockquote class="testimonial-card__quote">
@@ -914,10 +931,11 @@
                             data-reveal-delay="200"
                             role="listitem"
                             aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.3.aria"
                             aria-label="Testimonio 3 de 4"
                     >
                         <div class="testimonial-card__top">
-                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
                                 <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
                             </div>
                             <blockquote class="testimonial-card__quote">
@@ -944,10 +962,11 @@
                             data-reveal-delay="300"
                             role="listitem"
                             aria-roledescription="slide"
+                            data-i18n-aria="testimonials.slide.4.aria"
                             aria-label="Testimonio 4 de 4"
                     >
                         <div class="testimonial-card__top">
-                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                            <div class="testimonial-card__stars" data-i18n-aria="testimonials.stars.aria" aria-label="5 de 5 estrellas" role="img">
                                 <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
                             </div>
                             <blockquote class="testimonial-card__quote">
@@ -972,6 +991,7 @@
                 <button
                         class="testimonials-nav testimonials-nav--next"
                         id="testimonials-next"
+                        data-i18n-aria="testimonials.next.aria"
                         aria-label="Siguiente testimonio"
                         aria-controls="testimonials-track"
                 >
@@ -982,15 +1002,15 @@
             </div>
 
             <!-- Dot indicators -->
-            <div class="testimonials-dots" role="tablist" aria-label="Seleccionar testimonio">
-                <button class="testimonials-dot testimonials-dot--active" role="tab" aria-selected="true"  aria-label="Testimonio 1" data-index="0"></button>
-                <button class="testimonials-dot"                          role="tab" aria-selected="false" aria-label="Testimonio 2" data-index="1"></button>
-                <button class="testimonials-dot"                          role="tab" aria-selected="false" aria-label="Testimonio 3" data-index="2"></button>
-                <button class="testimonials-dot"                          role="tab" aria-selected="false" aria-label="Testimonio 4" data-index="3"></button>
+            <div class="testimonials-dots" role="tablist" data-i18n-aria="testimonials.select.aria" aria-label="Seleccionar testimonio">
+                <button class="testimonials-dot testimonials-dot--active" role="tab" aria-selected="true"  data-i18n-aria="testimonials.dot.1.aria" aria-label="Testimonio 1" data-index="0"></button>
+                <button class="testimonials-dot" role="tab" aria-selected="false" data-i18n-aria="testimonials.dot.2.aria" aria-label="Testimonio 2" data-index="1"></button>
+                <button class="testimonials-dot" role="tab" aria-selected="false" data-i18n-aria="testimonials.dot.3.aria" aria-label="Testimonio 3" data-index="2"></button>
+                <button class="testimonials-dot" role="tab" aria-selected="false" data-i18n-aria="testimonials.dot.4.aria" aria-label="Testimonio 4" data-index="3"></button>
             </div>
 
             <!-- Social-proof aggregate bar -->
-            <div class="testimonials-aggregate reveal-on-scroll" aria-label="Resumen de satisfacción">
+            <div class="testimonials-aggregate reveal-on-scroll" data-i18n-aria="testimonials.summary.aria" aria-label="Resumen de satisfacción">
                 <div class="testimonials-aggregate__item">
                     <span class="testimonials-aggregate__value">5.0</span>
                     <div class="testimonials-aggregate__stars" aria-hidden="true">
@@ -1111,6 +1131,7 @@
                             id="contactForm"
                             class="contact-form"
                             novalidate
+                            data-i18n-aria="contact.form.aria"
                             aria-label="Formulario de contacto"
                     >
                         <div class="contact-form__row">
@@ -1198,6 +1219,7 @@
                                     class="contact-form__input contact-form__textarea"
                                     rows="4"
                                     data-i18n-placeholder="contact.form.message.placeholder"
+                                    data-i18n-aria="contact.form.message.aria"
                                     placeholder="Cuéntanos qué necesitas…"
                                     aria-label="Mensaje opcional"
                             ></textarea>
@@ -1242,11 +1264,11 @@
                     </form>
                 </div>
 
-                <aside class="contact-aside reveal-on-scroll" data-reveal-delay="120" aria-label="Información de contacto y ubicación">
+                <aside class="contact-aside reveal-on-scroll" data-reveal-delay="120" data-i18n-aria="contact.aside.aria" aria-label="Información de contacto y ubicación">
 
                     <!-- Info cards -->
                     <div class="contact-info">
-                        <a href="mailto:contacto@pulsereport.pe" class="contact-info-card" aria-label="Enviar correo a contacto@pulsereport.pe">
+                        <a href="mailto:contacto@pulsereport.pe" class="contact-info-card" data-i18n-aria="contact.email.aria" aria-label="Enviar correo a contacto@pulsereport.pe">
                             <span class="contact-info-card__icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="2" y="4" width="20" height="16" rx="3"/>
@@ -1291,7 +1313,7 @@
                     </div>
 
                     <!-- Embedded Google Map -->
-                    <div class="contact-map" aria-label="Mapa de ubicación — Lima, Perú">
+                    <div class="contact-map" data-i18n-aria="contact.map.aria" aria-label="Mapa de ubicación — Lima, Perú">
                         <div class="contact-map__frame">
                             <iframe
                                     class="contact-map__iframe"
@@ -1303,6 +1325,7 @@
                                     loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"
                                     title="Ubicación de PulseReport en Lima, Perú"
+                                    data-i18n-aria="contact.map.iframe.aria"
                                     aria-label="Mapa interactivo de Lima, Perú"
                             ></iframe>
                         </div>
@@ -1317,43 +1340,47 @@
     </section>
 </main>
 
+<button type="button" class="back-to-top" id="backToTop" data-i18n-aria="accessibility.back-to-top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
+</button>
+
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
                 <h4 class="footer-brand">
-                    <img class="footer-brand__logo" src="assets/logo.png" alt="Logo PulseReport">
+                    <img class="footer-brand__logo" src="assets/logo.png" alt="Care-Labs" width="58" height="48" loading="lazy" decoding="async">
                     <span class="footer-brand__name">PulseReport</span>
                 </h4>
-                <p>Gestión digital para la continuidad asistencial.</p>
+                <p data-i18n="footer.desc">Gestión digital para la continuidad asistencial.</p>
                 <p class="footer-social">
                     <a href="mailto:contacto@pulsereport.pe">contacto@pulsereport.pe</a>
                 </p>
             </div>
 
             <div class="footer-section">
-                <h4>Producto</h4>
+                <h4 data-i18n="footer.product">Producto</h4>
                 <ul>
-                    <li><a href="#product-demo">Plataforma</a></li>
+                    <li><a href="#product-demo" data-i18n="nav.platform">Plataforma</a></li>
                     <li><a href="#problem" data-i18n="nav.problem">El problema</a></li>
-                    <li><a href="#features">Características</a></li>
-                    <li><a href="#how-it-works">Cómo funciona</a></li>
-                    <li><a href="#benefits">Beneficios</a></li>
+                    <li><a href="#how-it-works" data-i18n="nav.how-it-works">Cómo funciona</a></li>
+                    <li><a href="#features" data-i18n="nav.features">Características</a></li>
+                    <li><a href="#benefits" data-i18n="nav.benefits">Beneficios</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>Empresa</h4>
+                <h4 data-i18n="footer.company">Empresa</h4>
                 <ul>
-                    <li><a href="#team">Nosotros</a></li>
-                    <li><a href="#faq">Preguntas frecuentes</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#team" data-i18n="nav.team">Nosotros</a></li>
+                    <li><a href="#faq" data-i18n="nav.faq">Preguntas frecuentes</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Care-Labs. Todos los derechos reservados.</p>
+            <p data-i18n="footer.copy">© 2026 Care-Labs. Todos los derechos reservados.</p>
         </div>
     </div>
 </footer>

@@ -32,7 +32,10 @@
     });
 
     document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
-      const key = el.getAttribute('data-i18n-aria');
+      let key = el.getAttribute('data-i18n-aria');
+      if (el.id === 'menuToggle' && el.getAttribute('aria-expanded') === 'true') {
+        key = 'accessibility.close-menu';
+      }
       if (translations[key] !== undefined) {
         el.setAttribute('aria-label', translations[key]);
       }
@@ -64,6 +67,10 @@
     }
   }
 
+  function translate(key, fallback = '') {
+    return translations[key] !== undefined ? translations[key] : fallback;
+  }
+
   async function init() {
     const saved = localStorage.getItem(STORAGE_KEY);
     const browserLang = navigator.language?.slice(0, 2);
@@ -79,7 +86,11 @@
     });
   }
 
-  window.i18n = { switchLang, getCurrent: () => currentLang };
+  window.i18n = {
+    switchLang,
+    getCurrent: () => currentLang,
+    t: translate
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

@@ -8,9 +8,15 @@
     toggle.addEventListener('click', () => {
       const isOpen = menu.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(isOpen));
+      const labelKey = isOpen
+        ? 'accessibility.close-menu'
+        : 'accessibility.open-menu';
       toggle.setAttribute(
           'aria-label',
-          isOpen ? 'Close navigation menu' : 'Open navigation menu'
+          window.i18n?.t(
+              labelKey,
+              isOpen ? 'Close navigation menu' : 'Open navigation menu'
+          )
       );
       toggle.classList.toggle('is-open', isOpen);
     });
@@ -30,6 +36,40 @@
         toggle.classList.remove('is-open');
       }
     });
+  }
+
+  function initBackToTop() {
+    const button = document.getElementById('backToTop');
+    if (!button) return;
+
+    let hideTimer;
+
+    function update() {
+      const shouldShow = window.scrollY > 700;
+      window.clearTimeout(hideTimer);
+
+      if (shouldShow) {
+        button.hidden = false;
+        requestAnimationFrame(() => button.classList.add('is-visible'));
+      } else {
+        button.classList.remove('is-visible');
+        hideTimer = window.setTimeout(() => {
+          if (!button.classList.contains('is-visible')) button.hidden = true;
+        }, 250);
+      }
+    }
+
+    button.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'auto'
+          : 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   }
 
   /*Hero animations*/
@@ -137,6 +177,64 @@
     document.querySelectorAll('[data-counter-target]').forEach((el) => {
       observer.observe(el);
     });
+  }
+
+  function initVisualSummaryScroll() {
+    const summary = document.querySelector('.visual-summary');
+    if (!summary) return;
+
+    const list = summary.querySelector('.visual-summary__list');
+    const items = Array.from(summary.querySelectorAll('.visual-summary__list li'));
+    const buttons = Array.from(summary.querySelectorAll('[data-scroll-direction]'));
+    if (!list || !items.length) return;
+
+    let ticking = false;
+
+    function updateState() {
+      const maxScroll = Math.max(0, list.scrollHeight - list.clientHeight);
+      const progress = maxScroll ? list.scrollTop / maxScroll : 0;
+      const listCenter = list.scrollTop + list.clientHeight / 2;
+
+      summary.classList.toggle('has-scroll-above', list.scrollTop > 3);
+      summary.classList.toggle('has-scroll-below', list.scrollTop < maxScroll - 3);
+      summary.style.setProperty('--scroll-progress', String(Math.max(0.12, progress)));
+
+      buttons.forEach((button) => {
+        const direction = Number(button.dataset.scrollDirection);
+        button.disabled = direction < 0 ? list.scrollTop <= 3 : list.scrollTop >= maxScroll - 3;
+      });
+
+      let current = items[0];
+      let closestDistance = Infinity;
+      items.forEach((item) => {
+        const center = item.offsetTop + item.offsetHeight / 2;
+        const distance = Math.abs(center - listCenter);
+        if (distance < closestDistance) {
+          current = item;
+          closestDistance = distance;
+        }
+      });
+      items.forEach((item) => item.classList.toggle('is-current', item === current));
+      ticking = false;
+    }
+
+    list.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateState);
+    }, { passive: true });
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const direction = Number(button.dataset.scrollDirection);
+        const gap = parseFloat(getComputedStyle(list).rowGap) || 0;
+        const distance = (items[0].offsetHeight + gap) * direction;
+        list.scrollBy({ top: distance, behavior: 'smooth' });
+      });
+    });
+
+    window.addEventListener('resize', updateState, { passive: true });
+    updateState();
   }
 
   function initActiveNav() {
@@ -525,9 +623,11 @@
   //Boot function
   function boot() {
     initMobileNav();
+    initBackToTop();
     initHeroAnimations();
     initScrollReveal();
     initCounters();
+    initVisualSummaryScroll();
     initActiveNav();
     initNavbarShadow();
     initContactForm();
