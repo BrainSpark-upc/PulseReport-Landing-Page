@@ -350,6 +350,87 @@
 
     syncControls();
   }
+  /* FAQ */
+  function initFaqAccordion() {
+    const items = document.querySelectorAll('.faq-item');
+    if (!items.length) return;
+
+    const prefersReduced = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    items.forEach((details) => {
+      const summary = details.querySelector('summary');
+      if (!summary) return;
+
+      details.addEventListener('toggle', () => {
+        summary.setAttribute('aria-expanded', String(details.open));
+      });
+
+      if (prefersReduced || typeof details.animate !== 'function') {
+        return; // Let the native, instant open/close behavior handle it.
+      }
+
+      const answer = details.querySelector('.faq-answer');
+      let animation = null;
+      let isClosing = false;
+      let isExpanding = false;
+
+      summary.addEventListener('click', (e) => {
+        e.preventDefault();
+        details.style.overflow = 'hidden';
+
+        if (isClosing || !details.open) {
+          openItem();
+        } else if (isExpanding || details.open) {
+          shrinkItem();
+        }
+      });
+
+      function shrinkItem() {
+        isClosing = true;
+        const startHeight = `${details.offsetHeight}px`;
+        const endHeight = `${summary.offsetHeight}px`;
+
+        if (animation) animation.cancel();
+        animation = details.animate(
+            { height: [startHeight, endHeight] },
+            { duration: 300, easing: 'ease-out' }
+        );
+        animation.onfinish = () => onAnimationFinish(false);
+        animation.oncancel = () => { isClosing = false; };
+      }
+
+      function openItem() {
+        details.style.height = `${details.offsetHeight}px`;
+        details.open = true;
+        window.requestAnimationFrame(() => expandItem());
+      }
+
+      function expandItem() {
+        isExpanding = true;
+        const startHeight = `${details.offsetHeight}px`;
+        const endHeight = `${summary.offsetHeight + (answer ? answer.offsetHeight : 0)}px`;
+
+        if (animation) animation.cancel();
+        animation = details.animate(
+            { height: [startHeight, endHeight] },
+            { duration: 300, easing: 'ease-out' }
+        );
+        animation.onfinish = () => onAnimationFinish(true);
+        animation.oncancel = () => { isExpanding = false; };
+      }
+
+      function onAnimationFinish(open) {
+        details.open = open;
+        animation = null;
+        isClosing = false;
+        isExpanding = false;
+        details.style.height = '';
+        details.style.overflow = '';
+      }
+    });
+  }
   /* Contact-Us Section*/
   function initContactForm() {
     var form          = document.getElementById('contactForm');
@@ -456,6 +537,7 @@
     initFeatureCards();
     initTeamCards();
     initTestimonials();
+    initFaqAccordion();
   }
 
   if (document.readyState === 'loading') {

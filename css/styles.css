@@ -2138,6 +2138,7 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
         height: 1px;
     }
 }
+
 .faq {
     padding: 90px 0;
     background: #fafafa;
@@ -2164,30 +2165,79 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+    border-color: rgba(15, 118, 110, 0.32);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
 }
 
 .faq-item summary {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     padding: 20px 24px;
     font-size: 1.03rem;
     font-weight: 800;
     color: #0f172a;
     list-style: none;
+    outline: none;
+    transition: background 0.2s ease;
+}
+
+.faq-item summary:hover {
+    background: #f8fafc;
+}
+
+.faq-item summary:focus-visible {
+    background: #f8fafc;
+    box-shadow: inset 0 0 0 2px rgba(15, 118, 110, 0.55);
 }
 
 .faq-item summary::-webkit-details-marker {
     display: none;
 }
 
-.faq-item summary::after {
-    content: "+";
-    float: right;
-    font-weight: 900;
-    color: #0f766e;
+.faq-item__question {
+    flex: 1 1 auto;
 }
 
-.faq-item[open] summary::after {
-    content: "−";
+/* Plus-to-minus icon: the vertical bar collapses away on open */
+.faq-icon {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #0f766e;
+    border-radius: 999px;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon::before {
+    width: 14px;
+    height: 2.5px;
+    transform: translate(-50%, -50%);
+}
+
+.faq-icon::after {
+    width: 2.5px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+}
+
+.faq-item[open] .faq-icon::after {
+    transform: translate(-50%, -50%) scaleY(0);
 }
 
 .faq-answer {
@@ -2196,7 +2246,6 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
     color: #475569;
     line-height: 1.6;
 }
-
 
 
 .footer {
