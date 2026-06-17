@@ -782,6 +782,24 @@
                     </div>
                 </article>
 
+                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="lisitem" tabindex="0" aria-label="Carlos, Member">
+                    <div class="team-card__photo-wrap">
+                        <img
+                        class="team-card__photo"
+                        src="assets/Carlos-photo.jpg"
+                        alt="Carlos"
+                        width="400" height="440"
+                        loading="lazy"
+                        decoding="async">
+                        <div class="team-card__photo-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="team-card__body">
+                        <p class="team-card__role" data-i18n="team.5.role">Member</p>
+                        <h3 class="team-card__name" data-i18n="team.5.name">Carlos</h3>
+                        <span class="team-card__tag" aria-hidden="true" data-i18n="team.5.tag">Engineering</span>
+                    </div>
+                </article>
+
             </div>
 
             <div class="team-footer reveal-on-scroll">
@@ -830,11 +848,11 @@
         </div>
     </section>
     <!--Contact-->
-    <section class="contact-section" id="contact">
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
         <div class="contact-hero">
             <div class="container">
-                <h2 class="section-title">¿Listo para mejorar tu flujo clínico?</h2>
-                <p class="contact-hero__subtitle">
+                <h2 class="section-title" id="contact-heading" data-i18n="contact.title">¿Listo para mejorar tu flujo clínico?</h2>
+                <p class="contact-hero__subtitle" data-i18n="contact.desc">
                     Solicita una demo y conoce cómo PulseReport puede ayudarte a ordenar traspasos, trazabilidad y seguimiento.
                 </p>
             </div>
@@ -844,52 +862,55 @@
             <div class="container">
                 <div class="contact-split-board" id="contact-info">
                     <div class="contact-split__col contact-split__col--form">
-                        <p class="contact-split__eyebrow contact-split__eyebrow--form">Déjanos tus datos</p>
-                        <p class="contact-split__intro">
+                        <p class="contact-split__eyebrow contact-split__eyebrow--form" data-i18n="contact.form_eyebrow">Déjanos tus datos</p>
+                        <p class="contact-split__intro" data-i18n="contact.form_intro">
                             Usa este formulario para consultas, cotizaciones o para solicitar una demo.
                         </p>
 
-                        <form id="contactForm" class="contact-form" novalidate>
+                        <form id="contactForm" class="contact-form" novalidate aria-describedby="contactSubmitNotice">
                             <div class="contact-form__grid2">
-                                <label class="contact-form__field">
-                                    <span class="contact-form__label contact-form__label--first">Nombre</span>
-                                    <input type="text" name="nombre" autocomplete="given-name" required>
+                                <label class="contact-form__field" for="contact-name">
+                                    <span class="contact-form__label contact-form__label--first" data-i18n="contact.name">Nombre</span>
+                                    <input id="contact-name" type="text" name="nombre" autocomplete="given-name" required aria-required="true" aria-label="Nombre">
                                 </label>
 
-                                <label class="contact-form__field">
+                                <label class="contact-form__field" for="contact-lastname">
                                     <span class="contact-form__label contact-form__label--last">Apellidos</span>
-                                    <input type="text" name="apellidos" autocomplete="family-name" required>
+                                    <input id="contact-lastname" type="text" name="apellidos" autocomplete="family-name" required aria-required="true" aria-label="Apellidos">
                                 </label>
                             </div>
 
-                            <label class="contact-form__field">
-                                <span class="contact-form__label contact-form__label--email">Correo electrónico</span>
-                                <input type="email" name="email" autocomplete="email" required>
+                            <label class="contact-form__field" for="contact-email">
+                                <span class="contact-form__label contact-form__label--email" data-i18n="contact.email">Correo electrónico</span>
+                                <input id="contact-email" type="email" name="email" autocomplete="email" required aria-required="true" aria-label="Correo electrónico" placeholder="hola@ejemplo.com" data-i18n-placeholder="contact.email">
                             </label>
 
-                            <label class="contact-form__field">
-                                <span class="contact-form__label contact-form__label--country">Institución</span>
-                                <input type="text" name="institucion" autocomplete="organization" required>
+                            <label class="contact-form__field" for="contact-institution">
+                                <span class="contact-form__label contact-form__label--country" data-i18n="contact.institution">Institución</span>
+                                <input id="contact-institution" type="text" name="institucion" autocomplete="organization" required aria-required="true" aria-label="Institución" data-i18n-placeholder="contact.institution">
                             </label>
 
-                            <label class="contact-form__field">
-                                <span class="contact-form__label contact-form__label--message">Mensaje</span>
+                            <label class="contact-form__field" for="contact-message">
+                                <span class="contact-form__label contact-form__label--message" data-i18n="contact.message">Mensaje</span>
                                 <textarea
+                                        id="contact-message"
                                         name="mensaje"
                                         class="contact-form__textarea"
                                         rows="4"
+                                        aria-label="Mensaje"
                                         placeholder="Cuéntanos qué necesitas: demo, tipo de institución, volumen de usuarios, etc."
+                                        data-i18n-placeholder="contact.message"
                                 ></textarea>
                             </label>
 
-                            <button type="submit" class="btn contact-form__submit">Enviar al equipo</button>
+                            <button type="submit" class="btn contact-form__submit" data-i18n="contact.submit">Enviar al equipo</button>
                         </form>
 
                         <p id="contactSubmitNotice" class="contact-submit-notice" role="status" aria-live="polite" hidden></p>
                     </div>
 
                     <div class="contact-split__col contact-split__col--info">
-                        <p class="contact-split__eyebrow contact-split__eyebrow--info">Contáctanos</p>
+                        <p class="contact-split__eyebrow contact-split__eyebrow--info" data-i18n="contact.info_eyebrow">Contáctanos</p>
 
                         <div class="contact-info-block">
                             <div class="contact-info-row">
@@ -911,6 +932,17 @@
                                 <p class="contact-info-row__dd">
                                     Demo de la plataforma y evaluación de necesidades por institución.
                                 </p>
+                            </div>
+
+                            <!-- Embedded map for credibility and location (Lima, Peru) -->
+                            <div class="contact-map" aria-label="Map">
+                                <iframe
+                                        class="contact-map__iframe"
+                                        title="Location in Lima, Peru"
+                                        loading="lazy"
+                                        allowfullscreen
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        src="https://maps.google.com/maps?q=-12.084,-77.021&amp;hl=en&amp;z=14&amp;output=embed"></iframe>
                             </div>
                         </div>
                     </div>
