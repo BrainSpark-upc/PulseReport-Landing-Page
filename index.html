@@ -810,6 +810,208 @@
 
         </div>
     </section>
+    <!--Testimonials-->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="testimonials__header reveal-on-scroll">
+                <h2 class="section-title" id="testimonials-heading" data-i18n="testimonials.title">Lo que dicen los profesionales de salud</h2>
+                <p class="testimonials__lead" data-i18n="testimonials.lead">
+                    Equipos clínicos que ya han adoptado PulseReport comparten su experiencia con la plataforma.
+                </p>
+            </div>
+
+            <!-- Carousel / grid -->
+            <div
+                    class="testimonials-track-wrap"
+                    role="region"
+                    aria-label="Carrusel de testimonios"
+                    aria-roledescription="carousel"
+            >
+                <!-- Prev / Next controls -->
+                <button
+                        class="testimonials-nav testimonials-nav--prev"
+                        id="testimonials-prev"
+                        aria-label="Testimonio anterior"
+                        aria-controls="testimonials-track"
+                        disabled
+                >
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M13 4l-6 6 6 6"/>
+                    </svg>
+                </button>
+
+                <ol
+                        class="testimonials-track"
+                        id="testimonials-track"
+                        aria-live="polite"
+                        aria-atomic="false"
+                >
+                    <!-- Card 1 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="0"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            aria-label="Testimonio 1 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.1.text">
+                                    "PulseReport transformó nuestros traspasos de turno. Antes perdíamos hasta 20 minutos buscando notas dispersas; ahora el equipo entrante tiene todo en pantalla antes de que terminemos el briefing."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar" aria-hidden="true">
+                                <span>GC</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.1.name">Gloria Carbajal</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.1.role">Jefa de enfermería</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.1.org">Hospital Cardiovascular, Lima</span>
+                            </div>
+                        </footer>
+                    </li>
+
+                    <!-- Card 2 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="100"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            aria-label="Testimonio 2 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.2.text">
+                                    "La trazabilidad de eventos críticos nos ayudó enormemente en una auditoría interna. Tuvimos el historial completo listo en minutos, algo que antes nos tomaba días reconstruir."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar testimonial-card__avatar--b" aria-hidden="true">
+                                <span>CR</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.2.name">Carlos Ramírez</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.2.role">Coordinador clínico</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.2.org">Clínica Privada, Arequipa</span>
+                            </div>
+                        </footer>
+                    </li>
+
+                    <!-- Card 3 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="200"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            aria-label="Testimonio 3 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.3.text">
+                                    "Mis enfermeras adoptaron la plataforma en menos de una semana. La interfaz es clara, no sobrecarga y se adapta bien al ritmo real de una guardia cardiovascular."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar testimonial-card__avatar--c" aria-hidden="true">
+                                <span>LP</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.3.name">Lucía Portocarrero</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.3.role">Médico de planta</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.3.org">Centro Especializado, Trujillo</span>
+                            </div>
+                        </footer>
+                    </li>
+
+                    <!-- Card 4 -->
+                    <li
+                            class="testimonial-card reveal-on-scroll"
+                            data-reveal-delay="300"
+                            role="listitem"
+                            aria-roledescription="slide"
+                            aria-label="Testimonio 4 de 4"
+                    >
+                        <div class="testimonial-card__top">
+                            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas" role="img">
+                                <svg aria-hidden="true" viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                            </div>
+                            <blockquote class="testimonial-card__quote">
+                                <p data-i18n="testimonials.4.text">
+                                    "El registro de signos vitales y tratamientos en un solo lugar eliminó los duplicados que teníamos antes. La continuidad entre turnos mejoró notablemente desde el primer mes."
+                                </p>
+                            </blockquote>
+                        </div>
+                        <footer class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar testimonial-card__avatar--d" aria-hidden="true">
+                                <span>MA</span>
+                            </div>
+                            <div class="testimonial-card__meta">
+                                <strong class="testimonial-card__name" data-i18n="testimonials.4.name">Marcos Arrieta</strong>
+                                <span class="testimonial-card__role" data-i18n="testimonials.4.role">Supervisor de enfermería</span>
+                                <span class="testimonial-card__org" data-i18n="testimonials.4.org">Hospital Regional, Cusco</span>
+                            </div>
+                        </footer>
+                    </li>
+                </ol>
+
+                <button
+                        class="testimonials-nav testimonials-nav--next"
+                        id="testimonials-next"
+                        aria-label="Siguiente testimonio"
+                        aria-controls="testimonials-track"
+                >
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M7 4l6 6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Dot indicators -->
+            <div class="testimonials-dots" role="tablist" aria-label="Seleccionar testimonio">
+                <button class="testimonials-dot testimonials-dot--active" role="tab" aria-selected="true"  aria-label="Testimonio 1" data-index="0"></button>
+                <button class="testimonials-dot"                          role="tab" aria-selected="false" aria-label="Testimonio 2" data-index="1"></button>
+                <button class="testimonials-dot"                          role="tab" aria-selected="false" aria-label="Testimonio 3" data-index="2"></button>
+                <button class="testimonials-dot"                          role="tab" aria-selected="false" aria-label="Testimonio 4" data-index="3"></button>
+            </div>
+
+            <!-- Social-proof aggregate bar -->
+            <div class="testimonials-aggregate reveal-on-scroll" aria-label="Resumen de satisfacción">
+                <div class="testimonials-aggregate__item">
+                    <span class="testimonials-aggregate__value">5.0</span>
+                    <div class="testimonials-aggregate__stars" aria-hidden="true">
+                        <svg viewBox="0 0 80 16"><path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6zM24 1l1.8 3.6 4 .6-2.9 2.8.7 4L24 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM40 1l1.8 3.6 4 .6-2.9 2.8.7 4L40 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM56 1l1.8 3.6 4 .6-2.9 2.8.7 4L56 10l-3.6 1.9.7-4-2.9-2.8 4-.6zM72 1l1.8 3.6 4 .6-2.9 2.8.7 4L72 10l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#f59e0b"/></svg>
+                    </div>
+                    <span class="testimonials-aggregate__label" data-i18n="testimonials.aggregate.rating">Valoración media del piloto</span>
+                </div>
+                <div class="testimonials-aggregate__divider" aria-hidden="true"></div>
+                <div class="testimonials-aggregate__item">
+                    <span class="testimonials-aggregate__value" data-i18n="testimonials.aggregate.adoption">100%</span>
+                    <span class="testimonials-aggregate__label" data-i18n="testimonials.aggregate.adoption.label">Adopción en la primera semana</span>
+                </div>
+                <div class="testimonials-aggregate__divider" aria-hidden="true"></div>
+                <div class="testimonials-aggregate__item">
+                    <span class="testimonials-aggregate__value" data-i18n="testimonials.aggregate.handoff">−40%</span>
+                    <span class="testimonials-aggregate__label" data-i18n="testimonials.aggregate.handoff.label">Tiempo de traspaso entre turnos</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!--FAQ-->
     <section class="faq" id="faq">
         <div class="container">

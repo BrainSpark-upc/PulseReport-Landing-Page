@@ -255,6 +255,101 @@
       });
     });
   }
+  /* TESTIMONIALS*/
+  function initTestimonials() {
+    var track    = document.getElementById('testimonials-track');
+    var prevBtn  = document.getElementById('testimonials-prev');
+    var nextBtn  = document.getElementById('testimonials-next');
+    var dots     = Array.from(document.querySelectorAll('.testimonials-dot'));
+    var cards    = track ? Array.from(track.querySelectorAll('.testimonial-card')) : [];
+
+    if (!track || !cards.length) return;
+
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var currentIndex   = 0;
+
+    /* ── Scroll to a specific card ── */
+    function scrollToCard(index) {
+      if (index < 0 || index >= cards.length) return;
+      var card     = cards[index];
+      var behavior = prefersReduced ? 'auto' : 'smooth';
+      track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: behavior });
+      currentIndex = index;
+      syncControls();
+    }
+
+    function syncControls() {
+      if (prevBtn) prevBtn.disabled = currentIndex === 0;
+      if (nextBtn) nextBtn.disabled = currentIndex === cards.length - 1;
+
+      dots.forEach(function (dot, i) {
+        var active = i === currentIndex;
+        dot.classList.toggle('testimonials-dot--active', active);
+        dot.setAttribute('aria-selected', String(active));
+      });
+    }
+
+    /* ── Button clicks ── */
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        scrollToCard(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        scrollToCard(currentIndex + 1);
+      });
+    }
+
+    /* ── Dot clicks ── */
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(dot.dataset.index, 10);
+        if (!isNaN(idx)) scrollToCard(idx);
+      });
+
+      /* Keyboard: arrow keys navigate between dots */
+      dot.addEventListener('keydown', function (e) {
+        var idx = parseInt(dot.dataset.index, 10);
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          var next = dots[idx + 1];
+          if (next) { next.focus(); scrollToCard(idx + 1); }
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          var prev = dots[idx - 1];
+          if (prev) { prev.focus(); scrollToCard(idx - 1); }
+        }
+      });
+    });
+
+    /* ── IntersectionObserver: sync active dot with the card most in view ── */
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            var idx = cards.indexOf(entry.target);
+            if (idx !== -1 && idx !== currentIndex) {
+              currentIndex = idx;
+              syncControls();
+            }
+          }
+        });
+      }, { root: track, threshold: 0.5 });
+
+      cards.forEach(function (card) { io.observe(card); });
+    }
+
+    /* ── Keyboard: left/right arrows on track ── */
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); scrollToCard(currentIndex + 1); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); scrollToCard(currentIndex - 1); }
+    });
+
+    syncControls();
+  }
   /* Contact-Us Section*/
   function initContactForm() {
     var form          = document.getElementById('contactForm');
@@ -360,6 +455,7 @@
     initStepCards();
     initFeatureCards();
     initTeamCards();
+    initTestimonials();
   }
 
   if (document.readyState === 'loading') {
