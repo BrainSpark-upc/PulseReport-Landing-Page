@@ -7,7 +7,7 @@
 
     <meta name="author" content="BrainSpark">
     <meta name="description" content="PulseReport es una plataforma para centralizar traspasos SBAR, signos vitales, tratamientos y eventos críticos en entornos clínicos." />
-    <meta name="keywords" content="PulseReport, Care-Labs, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
+    <meta name="keywords" content="PulseReport, BrainSpark, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
     <meta name="keywords" content="PulseReport, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica">
     <meta name="theme-color" content="#0066CC" />
 
@@ -517,54 +517,136 @@
         </div>
     </section>
     <!--Benefits-->
-    <section class="benefits" id="benefits">
+    <section class="benefits" id="benefits" aria-labelledby="benefits-heading">
         <div class="container">
-            <div class="benefits-layout">
-                <div class="benefits-content">
-                    <p class="benefits-eyebrow">Salud cardiovascular</p>
-                    <h2 class="section-title benefits-heading">Beneficios de PulseReport</h2>
-                    <p class="benefits-lead">
-                        Una plataforma pensada para reducir desorden, mejorar seguimiento y reforzar la seguridad asistencial.
-                    </p>
+            <div class="benefits-shell reveal-on-scroll">
+                <div class="benefits-layout">
+                    <div class="benefits-copy">
+                        <p class="benefits-eyebrow" data-i18n="benefits.eyebrow">Impacto clínico</p>
+                        <h2 class="section-title benefits-heading" id="benefits-heading" data-i18n="benefits.title">Beneficios de PulseReport</h2>
+                        <p class="benefits-lead" data-i18n="benefits.lead">
+                            Un flujo único y ordenado para traspasos diarios, seguimiento clínico y supervisión del servicio en todo el equipo de salud.
+                        </p>
 
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <div class="benefit-content">
-                                <h3>Reduce pérdidas de información</h3>
-                                <p>Evita que datos importantes queden dispersos entre distintos canales o formatos.</p>
-                            </div>
-                        </div>
+                        <ul class="benefits-list" role="list">
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="0">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <path d="M12 6v6l4 2"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.1.kicker">Ahorro de tiempo</p>
+                                    <h3 data-i18n="benefits.card.1.title">Menos tiempo buscando, más tiempo cuidando</h3>
+                                    <p data-i18n="benefits.card.1.desc">
+                                        Los equipos dedican menos tiempo a buscar notas, mensajes u hojas de cálculo y más tiempo a la atención del paciente.
+                                    </p>
+                                </div>
+                            </li>
 
-                        <div class="benefit-item">
-                            <div class="benefit-content">
-                                <h3>Facilita seguimiento en tiempo real</h3>
-                                <p>Permite revisar registros clínicos clave de forma más rápida y clara.</p>
-                            </div>
-                        </div>
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="90">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 6H5a2 2 0 00-2 2v4"></path>
+                                        <path d="M15 18h4a2 2 0 002-2v-4"></path>
+                                        <path d="M7 14l-4-4 4-4"></path>
+                                        <path d="M17 10l4 4-4 4"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.2.kicker">Mejor coordinación</p>
+                                    <h3 data-i18n="benefits.card.2.title">Contexto compartido entre turnos</h3>
+                                    <p data-i18n="benefits.card.2.desc">
+                                        Todos ven la misma información actualizada, lo que ayuda a mantener alineados a los profesionales y evita trabajo duplicado.
+                                    </p>
+                                </div>
+                            </li>
 
-                        <div class="benefit-item">
-                            <div class="benefit-content">
-                                <h3>Mejora la trazabilidad</h3>
-                                <p>Conserva un historial útil para supervisión, auditoría y control interno.</p>
-                            </div>
-                        </div>
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="180">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        <path d="M9.5 12.2l1.9 1.9 3.9-4.2"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.3.kicker">Trazabilidad</p>
+                                    <h3 data-i18n="benefits.card.3.title">Un registro claro de lo que ocurre</h3>
+                                    <p data-i18n="benefits.card.3.desc">
+                                        Las acciones, cambios y eventos clínicos quedan ordenados para revisión, supervisión y responsabilidad.
+                                    </p>
+                                </div>
+                            </li>
 
-                        <div class="benefit-item">
-                            <div class="benefit-content">
-                                <h3>Disminuye procesos manuales</h3>
-                                <p>Reduce la dependencia de hojas sueltas, mensajes dispersos o registros incompletos.</p>
-                            </div>
-                        </div>
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="270">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 9v4"></path>
+                                        <path d="M12 17h.01"></path>
+                                        <path d="M10 3h4"></path>
+                                        <path d="M7 6h10"></path>
+                                        <path d="M6 21h12a2 2 0 002-2V7H4v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.4.kicker">Menos errores</p>
+                                    <h3 data-i18n="benefits.card.4.title">Reduce fallos manuales</h3>
+                                    <p data-i18n="benefits.card.4.desc">
+                                        La información centralizada disminuye omisiones, duplicados y detalles inconsistentes durante el traspaso.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="benefit-item reveal-on-scroll" data-reveal-delay="360">
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 8a2 2 0 012-2h12a2 2 0 012 2"></path>
+                                        <path d="M4 16a2 2 0 002 2h12a2 2 0 002-2"></path>
+                                        <path d="M4 12h16"></path>
+                                        <path d="M7 6v12"></path>
+                                    </svg>
+                                </span>
+                                <div class="benefit-content">
+                                    <p class="benefit-kicker" data-i18n="benefits.card.5.kicker">UX más clara</p>
+                                    <h3 data-i18n="benefits.card.5.title">Suficientemente simple para equipos ocupados</h3>
+                                    <p data-i18n="benefits.card.5.desc">
+                                        Una interfaz intuitiva facilita la adopción en usuarios que necesitan avanzar rápido sin perder claridad.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="benefits-images" aria-hidden="true">
-                    <div class="benefit-photo benefit-photo--left">
-                        <img src="assets/logo.png" width="500" height="500" alt="" loading="lazy" decoding="async">
-                    </div>
-                    <div class="benefit-photo benefit-photo--right">
-                        <img src="assets/logo.png" width="500" height="500" alt="" loading="lazy" decoding="async">
-                    </div>
+                    <aside class="benefits-visual reveal-on-scroll" data-reveal-delay="120" data-i18n-aria="benefits.summary.aria" aria-label="Resumen del impacto clínico">
+                        <div class="benefits-visual__image">
+                            <img src="assets/clinic-medical-staff.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async" aria-hidden="true">
+                            <div class="benefits-visual__overlay">
+                                <span class="benefits-visual__badge" data-i18n="benefits.summary.badge">Claridad clínica disponible las 24 horas del día</span>
+                                <strong data-i18n="benefits.summary.title">Una sola fuente de control</strong>
+                                <p data-i18n="benefits.summary.text">
+                                    Un servicio enfocado en mantener la información clínica correcta, organizada y visible en el momento adecuado.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="benefits-visual__stats" role="list" data-i18n-aria="benefits.metrics.aria" aria-label="Resumen de beneficios">
+                            <article class="benefits-stat" role="listitem">
+                                <span class="benefits-stat__label" data-i18n="benefits.metric.1.label">Traspasos más rápidos</span>
+                                <strong class="benefits-stat__value" data-i18n="benefits.metric.1.value">Trabajo más fluido</strong>
+                            </article>
+
+                            <article class="benefits-stat" role="listitem">
+                                <span class="benefits-stat__label" data-i18n="benefits.metric.2.label">Control operativo</span>
+                                <strong class="benefits-stat__value" data-i18n="benefits.metric.2.value">Más visibilidad</strong>
+                            </article>
+
+                            <article class="benefits-stat" role="listitem">
+                                <span class="benefits-stat__label" data-i18n="benefits.metric.3.label">Atención más segura</span>
+                                <strong class="benefits-stat__value" data-i18n="benefits.metric.3.value">Menos tiempos muertos</strong>
+                            </article>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </div>
