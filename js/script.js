@@ -66,7 +66,6 @@
 
   function initScrollReveal() {
     if (!('IntersectionObserver' in window)) {
-      /* Fallback: make everything visible */
       document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
         el.classList.add('is-visible');
       });
