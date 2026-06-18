@@ -620,6 +620,69 @@
       }, 1400);
     });
   }
+  // Footer
+  function initFooter() {
+    const overlay   = document.getElementById('terms-modal');
+    const closeBtn  = document.getElementById('terms-modal-close');
+    const triggers  = document.querySelectorAll('.footer-terms-btn');
+
+    if (!overlay || !closeBtn) return;
+
+    let openerEl = null;
+
+    function getFocusable() {
+      return Array.from(
+          overlay.querySelectorAll(
+              'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), input, textarea, select'
+          )
+      );
+    }
+
+    function openModal(trigger) {
+      openerEl = trigger || null;
+      overlay.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      // Move focus to close button
+      requestAnimationFrame(() => closeBtn.focus());
+    }
+
+    function closeModal() {
+      overlay.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      if (openerEl) openerEl.focus();
+    }
+
+    triggers.forEach((btn) => {
+      btn.addEventListener('click', () => openModal(btn));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on backdrop click
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+
+    // Close on Escape; trap Tab inside modal
+    overlay.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const focusable = getFocusable();
+        if (!focusable.length) { e.preventDefault(); return; }
+        const first = focusable[0];
+        const last  = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+        }
+      }
+    });
+  }
+
   //Boot function
   function boot() {
     initMobileNav();
@@ -638,6 +701,7 @@
     initTeamCards();
     initTestimonials();
     initFaqAccordion();
+    initFooter();
   }
 
   if (document.readyState === 'loading') {

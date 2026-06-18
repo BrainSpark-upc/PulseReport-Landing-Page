@@ -1345,46 +1345,191 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>
 </button>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4 class="footer-brand">
-                    <img class="footer-brand__logo" src="assets/logo.png" alt="Care-Labs" width="58" height="48" loading="lazy" decoding="async">
-                    <span class="footer-brand__name">PulseReport</span>
-                </h4>
-                <p data-i18n="footer.desc">Gestión digital para la continuidad asistencial.</p>
-                <p class="footer-social">
-                    <a href="mailto:contacto@pulsereport.pe">contacto@pulsereport.pe</a>
-                </p>
-            </div>
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo" aria-label="Site footer">
 
-            <div class="footer-section">
-                <h4 data-i18n="footer.product">Producto</h4>
-                <ul>
-                    <li><a href="#product-demo" data-i18n="nav.platform">Plataforma</a></li>
-                    <li><a href="#problem" data-i18n="nav.problem">El problema</a></li>
-                    <li><a href="#how-it-works" data-i18n="nav.how-it-works">Cómo funciona</a></li>
-                    <li><a href="#features" data-i18n="nav.features">Características</a></li>
-                    <li><a href="#benefits" data-i18n="nav.benefits">Beneficios</a></li>
-                </ul>
-            </div>
 
-            <div class="footer-section">
-                <h4 data-i18n="footer.company">Empresa</h4>
-                <ul>
-                    <li><a href="#team" data-i18n="nav.team">Nosotros</a></li>
-                    <li><a href="#faq" data-i18n="nav.faq">Preguntas frecuentes</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="footer-body">
+        <div class="container">
+            <div class="footer-grid">
 
-        <div class="footer-bottom">
-            <p data-i18n="footer.copy">© 2026 Care-Labs. Todos los derechos reservados.</p>
+                <!-- Col 1: Brand -->
+                <div class="footer-brand-col">
+                    <a href="#" class="footer-logo" aria-label="PulseReport — go to top">
+                        <img src="assets/logo.png" alt="PulseReport logo" class="footer-logo__img" width="48" height="40" loading="lazy">
+                        <span class="footer-logo__text">PulseReport</span>
+                    </a>
+
+                    <!-- Inline ECG pulse animation -->
+                    <div class="footer-pulse" aria-hidden="true">
+                        <svg class="footer-pulse__svg" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polyline class="footer-pulse__line" points="0,20 40,20 55,20 65,5 75,35 85,20 100,20 115,20 125,8 135,32 145,20 200,20" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <p class="footer-tagline" data-i18n="footer.tagline">
+                        Smarter clinical handoffs. Safer patient care.
+                    </p>
+                    <p class="footer-desc" data-i18n="footer.desc">
+                        PulseReport is a clinical communication platform designed to reduce information loss, improve shift coordination, and bring traceability to every care team.
+                    </p>
+                </div>
+
+                <!-- Col 2: Product nav -->
+                <nav class="footer-nav-col" aria-label="Product navigation">
+                    <h3 class="footer-col-heading" data-i18n="footer.nav.product.title">Product</h3>
+                    <ul class="footer-nav-list" role="list">
+                        <li><a href="#product-demo" class="footer-nav-link" data-i18n="footer.nav.platform">Platform</a></li>
+                        <li><a href="#problem" class="footer-nav-link" data-i18n="footer.nav.problem">The Problem</a></li>
+                        <li><a href="#features" class="footer-nav-link" data-i18n="footer.nav.features">Features</a></li>
+                        <li><a href="#benefits" class="footer-nav-link" data-i18n="footer.nav.benefits">Benefits</a></li>
+                        <li><a href="#who-is-it-for" class="footer-nav-link" data-i18n="footer.nav.who">Who is it for</a></li>
+                        <li><a href="#how-it-works" class="footer-nav-link" data-i18n="footer.nav.how">How it works</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 3: Company nav -->
+                <nav class="footer-nav-col" aria-label="Company navigation">
+                    <h3 class="footer-col-heading" data-i18n="footer.nav.company.title">Company</h3>
+                    <ul class="footer-nav-list" role="list">
+                        <li><a href="#team" class="footer-nav-link" data-i18n="footer.nav.team">Our team</a></li>
+                        <li><a href="#faq" class="footer-nav-link" data-i18n="footer.nav.faq">FAQ</a></li>
+                        <li><a href="#contact" class="footer-nav-link" data-i18n="footer.nav.contact">Contact</a></li>
+                        <li>
+                            <button
+                                    type="button"
+                                    class="footer-nav-link footer-terms-btn"
+                                    aria-haspopup="dialog"
+                                    aria-controls="terms-modal"
+                                    data-i18n="footer.nav.terms"
+                            >Terms &amp; Conditions</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Col 4: Contact + trust badges -->
+                <div class="footer-contact-col">
+                    <h3 class="footer-col-heading" data-i18n="footer.contact.title">Get in touch</h3>
+                    <ul class="footer-contact-list" role="list">
+                        <li class="footer-contact-item">
+                                <span class="footer-contact-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                                </span>
+                            <a href="mailto:pulsereport@brainspark.dev" class="footer-contact-link">pulsereport@brainspark.dev</a>
+                        </li>
+                        <li class="footer-contact-item">
+                                <span class="footer-contact-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                                </span>
+                            <span class="footer-contact-text" data-i18n="footer.contact.response">Responds within 24 hours</span>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
         </div>
     </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom__inner">
+                <p class="footer-copy">
+                    <span data-i18n="footer.copy.prefix">© 2025 PulseReport · Built by</span>
+                    <strong>&nbsp;BrainSpark</strong>.
+                    <span data-i18n="footer.copy.rights">All rights reserved.</span>
+                </p>
+                <div class="footer-bottom__links">
+                    <button
+                            type="button"
+                            class="footer-bottom-link footer-terms-btn"
+                            aria-haspopup="dialog"
+                            aria-controls="terms-modal"
+                            data-i18n="footer.nav.terms"
+                    >Terms &amp; Conditions</button>
+                    <span class="footer-bottom__sep" aria-hidden="true">·</span>
+                    <a href="mailto:pulsereport@brainspark.dev" class="footer-bottom-link" data-i18n="footer.nav.contact.short">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </footer>
+
+<!-- Terms & Conditions -->
+<div
+        id="terms-modal"
+        class="modal-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="terms-modal-title"
+        aria-describedby="terms-modal-body"
+        hidden
+>
+    <div class="modal-panel">
+        <div class="modal-header">
+            <h2 class="modal-title" id="terms-modal-title" data-i18n="terms.title">Terms and Conditions of Service</h2>
+            <button
+                    type="button"
+                    class="modal-close"
+                    aria-label="Close terms and conditions"
+                    id="terms-modal-close"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="modal-body" id="terms-modal-body" tabindex="0">
+
+            <p class="modal-updated" data-i18n="terms.updated">Last updated: January 2025</p>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s1.title">1. Acceptance of Terms</h3>
+                <p data-i18n="terms.s1.body">By accessing or using PulseReport, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please discontinue use of the platform immediately. These terms apply to all users, including clinical staff, supervisors, and system administrators.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s2.title">2. Purpose and Intended Use</h3>
+                <p data-i18n="terms.s2.body">PulseReport is designed exclusively to support clinical information management and shift coordination within authorised healthcare institutions. The platform is not intended to replace clinical judgment, serve as a primary medical record system, or be used outside of its intended professional healthcare context.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s3.title">3. User Responsibilities</h3>
+                <p data-i18n="terms.s3.body">Users are responsible for maintaining the confidentiality of their access credentials, entering accurate and complete clinical information, using the platform in accordance with their institution's policies, and reporting any system anomalies or suspected security breaches to their administrator promptly.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s4.title">4. Patient Data and Privacy</h3>
+                <p data-i18n="terms.s4.body">PulseReport processes sensitive clinical and patient data. All data entered into the platform must comply with applicable health data protection regulations. BrainSpark does not sell, share, or use patient data for commercial purposes. Data is stored securely and access is restricted to authorised personnel within the subscribing institution.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s5.title">5. Clinical Disclaimer</h3>
+                <p data-i18n="terms.s5.body">PulseReport is a coordination and documentation tool. It does not provide medical advice, clinical diagnoses, or treatment recommendations. Clinical decisions remain the sole responsibility of qualified healthcare professionals. BrainSpark accepts no liability for clinical outcomes resulting from information recorded or accessed through the platform.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s6.title">6. Intellectual Property</h3>
+                <p data-i18n="terms.s6.body">All platform content, design, code, and branding are the intellectual property of BrainSpark. Reproduction, redistribution, or commercial use of any part of PulseReport without prior written consent is strictly prohibited.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s7.title">7. Modifications to Terms</h3>
+                <p data-i18n="terms.s7.body">BrainSpark reserves the right to update these terms at any time. Continued use of the platform following notification of changes constitutes acceptance of the revised terms. Users are encouraged to review this document periodically.</p>
+            </section>
+
+            <section class="modal-section">
+                <h3 data-i18n="terms.s8.title">8. Contact</h3>
+                <p data-i18n="terms.s8.body">For questions regarding these terms, please contact us at <a href="mailto:pulsereport@brainspark.dev" class="modal-link">pulsereport@brainspark.dev</a>. We are committed to ethical and transparent communication.</p>
+            </section>
+
+        </div>
+    </div>
+</div>
+
 
 <script src="js/i18n.js"></script>
 <script src="js/script.js"></script>
