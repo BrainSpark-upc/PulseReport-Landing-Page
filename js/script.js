@@ -349,10 +349,13 @@
       ".feature-card",
       ".benefit-item",
       ".benefits-stat",
+      ".pricing-card",
       ".team-card",
+      ".team-footer",
       ".testimonial-card",
       ".contact-info-card",
       ".faq-item",
+      ".final-cta__panel",
     ].join(",");
 
     document.querySelectorAll(selector).forEach((surface) => {

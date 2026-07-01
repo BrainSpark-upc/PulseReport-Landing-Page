@@ -46,6 +46,7 @@
                 <li><a href="#how-it-works" data-i18n="nav.how-it-works">¿Cómo funciona?</a></li>
                 <li><a href="#features" data-i18n="nav.features">Características</a></li>
                 <li><a href="#benefits" data-i18n="nav.benefits">Beneficios</a></li>
+                <li><a href="#pricing" class="nav-pricing-cta" data-i18n="nav.pricing">Planes</a></li>
                 <li><a href="#team" data-i18n="nav.team">Nosotros</a></li>
                 <li><a href="#faq" data-i18n="nav.faq">Preguntas Frecuentes</a></li>
             </ul>
@@ -733,10 +734,16 @@
                 </p>
             </div>
 
+            <div class="team-footer reveal-on-scroll" data-reveal-variant="scale">
+                <p class="team-footer__text" data-i18n="team.footer.text">
+                    A multidisciplinary team united by one goal: making clinical information work better for the people who need it most.
+                </p>
+            </div>
+
             <!-- Cards -->
             <div class="team-grid" role="list">
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="0" role="listitem" tabindex="0">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="0" data-reveal-variant="scale" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -755,7 +762,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="100" role="listitem" tabindex="0">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="90" data-reveal-variant="scale" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -774,7 +781,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="200" role="listitem" tabindex="0">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="180" data-reveal-variant="scale" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -793,7 +800,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="listitem" tabindex="0">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="270" data-reveal-variant="scale" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
@@ -812,7 +819,7 @@
                     </div>
                 </article>
 
-                <article class="team-card reveal-on-scroll" data-reveal-delay="300" role="listitem" tabindex="0">
+                <article class="team-card reveal-on-scroll" data-reveal-delay="360" data-reveal-variant="scale" role="listitem" tabindex="0">
                     <div class="team-card__photo-wrap">
                         <img
                         class="team-card__photo"
@@ -830,12 +837,6 @@
                     </div>
                 </article>
 
-            </div>
-
-            <div class="team-footer reveal-on-scroll">
-                <p class="team-footer__text" data-i18n="team.footer.text">
-                    A multidisciplinary team united by one goal: making clinical information work better for the people who need it most.
-                </p>
             </div>
 
         </div>
@@ -1327,6 +1328,163 @@
 
         </div>
     </section>
+    <!-- Pricing -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+        <div class="pricing-bg" aria-hidden="true">
+            <span class="pricing-bg__orb pricing-bg__orb--one"></span>
+            <span class="pricing-bg__orb pricing-bg__orb--two"></span>
+        </div>
+
+        <div class="container">
+            <header class="pricing__header reveal-on-scroll">
+                <p class="pricing__eyebrow" data-i18n="pricing.eyebrow">Planes flexibles</p>
+                <h2 class="section-title pricing__title" id="pricing-heading" data-i18n="pricing.title">
+                    Elige el plan que acompaña a tu equipo
+                </h2>
+                <p class="pricing__lead" data-i18n="pricing.lead">
+                    Accede a PulseReport mediante una suscripción mensual y elige la alternativa que mejor se adapte al momento de tu institución.
+                </p>
+            </header>
+
+            <div class="pricing-grid" role="list">
+                <article class="pricing-card reveal-on-scroll" data-reveal-delay="0" data-reveal-variant="scale" role="listitem">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__level" data-i18n="pricing.basic.level">Para comenzar</span>
+                        <h3 class="pricing-card__name" data-i18n="pricing.basic.name">Basic</h3>
+                    </div>
+                    <div class="pricing-card__price">
+                        <span class="pricing-card__currency">$</span>
+                        <strong>9.99</strong>
+                        <span class="pricing-card__period" data-i18n="pricing.period">/ mes</span>
+                    </div>
+                    <p class="pricing-card__desc" data-i18n="pricing.basic.desc">
+                        Una entrada accesible para equipos que empiezan a ordenar y centralizar sus traspasos clínicos.
+                    </p>
+                    <ul class="pricing-card__features" role="list">
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.1">Gestión de pacientes e historial clínico</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.2">Registro de signos vitales</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.3">Seguimiento de tratamientos</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.basic.feature.4">Traspasos SBAR digitales</span></li>
+                    </ul>
+                    <div class="pricing-card__meta">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M10 2.5a7.5 7.5 0 107.5 7.5A7.5 7.5 0 0010 2.5z"/>
+                            <path d="M10 6v4.4l2.8 1.7"/>
+                        </svg>
+                        <span data-i18n="pricing.monthly">Suscripción mensual</span>
+                    </div>
+                    <a class="btn pricing-card__button pricing-card__button--secondary"
+                       href="https://front-pulsereport.vercel.app/sign-in"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-i18n="pricing.basic.cta"
+                       data-i18n-aria="pricing.basic.cta.aria"
+                       aria-label="Elegir el plan Basic en PulseReport">
+                        Elegir Basic
+                    </a>
+                </article>
+
+                <article class="pricing-card pricing-card--featured reveal-on-scroll" data-reveal-delay="100" data-reveal-variant="scale" role="listitem">
+                    <span class="pricing-card__badge" data-i18n="pricing.standard.badge">Recomendado</span>
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__level" data-i18n="pricing.standard.level">Para crecer</span>
+                        <h3 class="pricing-card__name" data-i18n="pricing.standard.name">Standard</h3>
+                    </div>
+                    <div class="pricing-card__price">
+                        <span class="pricing-card__currency">$</span>
+                        <strong>19.99</strong>
+                        <span class="pricing-card__period" data-i18n="pricing.period">/ mes</span>
+                    </div>
+                    <p class="pricing-card__desc" data-i18n="pricing.standard.desc">
+                        La opción equilibrada para equipos clínicos en crecimiento que necesitan sostener un flujo de trabajo más amplio.
+                    </p>
+                    <ul class="pricing-card__features" role="list">
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.1">Todo lo incluido en Basic</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.2">Alertas y eventos críticos</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.3">Dashboard clínico</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.standard.feature.4">Log de auditoría y trazabilidad</span></li>
+                    </ul>
+                    <div class="pricing-card__meta">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M10 2.5a7.5 7.5 0 107.5 7.5A7.5 7.5 0 0010 2.5z"/>
+                            <path d="M10 6v4.4l2.8 1.7"/>
+                        </svg>
+                        <span data-i18n="pricing.monthly">Suscripción mensual</span>
+                    </div>
+                    <a class="btn btn-primary pricing-card__button"
+                       href="https://front-pulsereport.vercel.app/sign-in"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-i18n="pricing.standard.cta"
+                       data-i18n-aria="pricing.standard.cta.aria"
+                       aria-label="Elegir el plan Standard en PulseReport">
+                        Elegir Standard
+                    </a>
+                </article>
+
+                <article class="pricing-card reveal-on-scroll" data-reveal-delay="200" data-reveal-variant="scale" role="listitem">
+                    <div class="pricing-card__header">
+                        <span class="pricing-card__level" data-i18n="pricing.premium.level">Para escalar</span>
+                        <h3 class="pricing-card__name" data-i18n="pricing.premium.name">Premium</h3>
+                    </div>
+                    <div class="pricing-card__price">
+                        <span class="pricing-card__currency">$</span>
+                        <strong>49.99</strong>
+                        <span class="pricing-card__period" data-i18n="pricing.period">/ mes</span>
+                    </div>
+                    <p class="pricing-card__desc" data-i18n="pricing.premium.desc">
+                        La alternativa de mayor alcance para instituciones que proyectan ampliar su operación con PulseReport.
+                    </p>
+                    <ul class="pricing-card__features" role="list">
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.1">Todo lo incluido en Standard</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.2">Analítica y reportes avanzados</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.3">Roles y permisos institucionales</span></li>
+                        <li><span aria-hidden="true">✓</span><span data-i18n="pricing.premium.feature.4">Evaluación de integración y acompañamiento</span></li>
+                    </ul>
+                    <div class="pricing-card__meta">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                            <path d="M10 2.5a7.5 7.5 0 107.5 7.5A7.5 7.5 0 0010 2.5z"/>
+                            <path d="M10 6v4.4l2.8 1.7"/>
+                        </svg>
+                        <span data-i18n="pricing.monthly">Suscripción mensual</span>
+                    </div>
+                    <a class="btn pricing-card__button pricing-card__button--secondary"
+                       href="https://front-pulsereport.vercel.app/sign-in"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-i18n="pricing.premium.cta"
+                       data-i18n-aria="pricing.premium.cta.aria"
+                       aria-label="Elegir el plan Premium en PulseReport">
+                        Elegir Premium
+                    </a>
+                </article>
+            </div>
+
+            <div class="pricing-includes reveal-on-scroll" data-reveal-delay="120">
+                <p class="pricing-includes__title" data-i18n="pricing.includes.title">
+                    La experiencia esencial de PulseReport
+                </p>
+                <ul class="pricing-includes__list" role="list">
+                    <li>
+                        <span class="pricing-includes__check" aria-hidden="true">✓</span>
+                        <span data-i18n="pricing.includes.1">Traspasos SBAR digitales</span>
+                    </li>
+                    <li>
+                        <span class="pricing-includes__check" aria-hidden="true">✓</span>
+                        <span data-i18n="pricing.includes.2">Información clínica centralizada</span>
+                    </li>
+                    <li>
+                        <span class="pricing-includes__check" aria-hidden="true">✓</span>
+                        <span data-i18n="pricing.includes.3">Seguimiento clínico ordenado</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="pricing__note reveal-on-scroll" data-reveal-delay="180" data-i18n="pricing.note">
+                La selección, el pago y la activación del plan se completan dentro de PulseReport.
+            </p>
+        </div>
+    </section>
     <!--FAQ-->
     <section class="faq" id="faq" aria-labelledby="faq-heading">
         <div class="container">
@@ -1407,6 +1565,37 @@
         </div>
     </section>
 
+    <!-- Final call to action -->
+    <section class="final-cta" aria-labelledby="final-cta-heading">
+        <div class="container">
+            <div class="final-cta__panel reveal-on-scroll" data-reveal-variant="scale">
+                <div class="final-cta__content">
+                    <p class="final-cta__eyebrow" data-i18n="final-cta.eyebrow">PulseReport web</p>
+                    <h2 class="final-cta__title" id="final-cta-heading" data-i18n="final-cta.title">
+                        Ready to improve every clinical handoff?
+                    </h2>
+                    <p class="final-cta__text" data-i18n="final-cta.text">
+                        Access PulseReport and give your clinical team a clearer, safer way to keep critical information moving.
+                    </p>
+                </div>
+
+                <a
+                        class="final-cta__button"
+                        href="https://front-pulsereport.vercel.app/sign-in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n-aria="final-cta.button.aria"
+                        aria-label="Open PulseReport web application"
+                >
+                    <span data-i18n="final-cta.button">Go to PulseReport</span>
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 10h12M11 5l5 5-5 5"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <button type="button" class="back-to-top" id="backToTop" data-i18n-aria="accessibility.back-to-top" aria-label="Back to top" hidden>
@@ -1451,6 +1640,7 @@
                         <li><a href="#problem" class="footer-nav-link" data-i18n="footer.nav.problem">The Problem</a></li>
                         <li><a href="#features" class="footer-nav-link" data-i18n="footer.nav.features">Features</a></li>
                         <li><a href="#benefits" class="footer-nav-link" data-i18n="footer.nav.benefits">Benefits</a></li>
+                        <li><a href="#pricing" class="footer-nav-link" data-i18n="footer.nav.pricing">Plans</a></li>
                         <li><a href="#who-is-it-for" class="footer-nav-link" data-i18n="footer.nav.who">Who is it for</a></li>
                         <li><a href="#how-it-works" class="footer-nav-link" data-i18n="footer.nav.how">How it works</a></li>
                     </ul>
