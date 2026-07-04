@@ -104,7 +104,7 @@ section {
 
 .navbar .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1760px;
   padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
@@ -196,6 +196,65 @@ section {
 
 .nav-menu a.nav-pricing-cta::after {
   display: none;
+}
+
+.nav-login-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(15, 118, 110, 0.28);
+  border-radius: 999px;
+  color: #0f766e;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 253, 250, 0.94),
+    rgba(236, 254, 255, 0.9)
+  );
+  box-shadow: 0 7px 18px rgba(15, 118, 110, 0.1);
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    color 0.24s ease,
+    background-color 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.24s var(--motion-ease-out, ease);
+}
+
+.nav-login-cta svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+  transition: transform 0.24s var(--motion-ease-out, ease);
+}
+
+.nav-login-cta:hover,
+.nav-login-cta:focus-visible {
+  color: #ffffff;
+  background: #0f766e;
+  border-color: #0f766e;
+  box-shadow: 0 12px 26px rgba(15, 118, 110, 0.26);
+  transform: translateY(-2px);
+}
+
+.nav-login-cta:hover svg,
+.nav-login-cta:focus-visible svg {
+  transform: translateX(2px);
+}
+
+.nav-login-cta:focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 3px;
 }
 
 .nav-header-end {
@@ -1998,7 +2057,7 @@ section {
 }
 
 /* Responsive */
-@media (min-width: 1181px) and (max-width: 1500px) {
+@media (min-width: 1181px) and (max-width: 1700px) {
   .menu-toggle {
     display: inline-flex;
     margin-left: auto;
@@ -3146,7 +3205,11 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
   overflow: hidden;
   padding: 108px 0 100px;
   background:
-    radial-gradient(circle at 50% -18%, rgba(20, 184, 166, 0.2), transparent 36%),
+    radial-gradient(
+      circle at 50% -18%,
+      rgba(20, 184, 166, 0.2),
+      transparent 36%
+    ),
     linear-gradient(145deg, #071a2e 0%, #0b2944 52%, #0b3b46 100%);
 }
 
@@ -3265,8 +3328,11 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
   padding: 2rem;
   border: 1px solid rgba(203, 213, 225, 0.88);
   border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(248, 250, 252, 0.97));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.99),
+    rgba(248, 250, 252, 0.97)
+  );
   box-shadow: 0 22px 56px rgba(2, 12, 27, 0.24);
   transition:
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
@@ -3304,7 +3370,11 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
 .pricing-card--featured {
   border-color: rgba(45, 212, 191, 0.65);
   background:
-    radial-gradient(circle at 90% 0%, rgba(45, 212, 191, 0.12), transparent 30%),
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(45, 212, 191, 0.12),
+      transparent 30%
+    ),
     linear-gradient(180deg, #ffffff, #f0fdfa);
   box-shadow:
     0 28px 72px rgba(2, 12, 27, 0.36),
@@ -3724,7 +3794,11 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
   border-radius: 30px;
   color: #ffffff;
   background:
-    radial-gradient(circle at 83% 18%, rgba(45, 212, 191, 0.34), transparent 26%),
+    radial-gradient(
+      circle at 83% 18%,
+      rgba(45, 212, 191, 0.34),
+      transparent 26%
+    ),
     linear-gradient(125deg, #0c2340 0%, #0f5f65 55%, #0f766e 100%);
   box-shadow: 0 28px 70px rgba(12, 35, 64, 0.22);
 }
@@ -4871,6 +4945,25 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
     gap: 0.45rem;
   }
 
+  .nav-login-cta {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0;
+  }
+
+  .nav-login-cta span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   .language-swicher,
   .language-switcher {
     gap: 0.2rem;
@@ -4967,6 +5060,12 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
 
   .footer-content {
     gap: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    display: none;
   }
 }
 
