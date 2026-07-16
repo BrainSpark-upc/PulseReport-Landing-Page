@@ -15,6 +15,7 @@
   "accessibility.primary-nav": "Primary navigation",
   "accessibility.home": "Go to home",
   "accessibility.language": "Language",
+  "accessibility.theme-toggle": "Toggle light and dark mode",
   "accessibility.login": "Open PulseReport sign in",
   "accessibility.highlights": "Key platform highlights",
   "accessibility.open-demo": "Open PulseReport web application demo",

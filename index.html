@@ -8,12 +8,26 @@
     <meta name="author" content="BrainSpark">
     <meta name="description" content="PulseReport es una plataforma para centralizar traspasos SBAR, signos vitales, tratamientos y eventos críticos en entornos clínicos." />
     <meta name="keywords" content="PulseReport, BrainSpark, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
-    <meta name="theme-color" content="#0f766e" />
+    <meta name="theme-color" content="#0f766e" id="themeColorMeta" />
+    <meta name="color-scheme" content="light dark" />
 
     <title>PulseReport | BrainSpark</title>
 
     <link rel="canonical" href="https://front-pulsereport.vercel.app/sign-in">
     <link rel="icon" type="image/png" href="assets/pestana-logo.png" />
+    <script>
+        (function () {
+            try {
+                var storedTheme = localStorage.getItem("pulsereport_theme");
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                var theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : prefersDark ? "dark" : "light";
+                document.documentElement.dataset.theme = theme;
+                document.documentElement.style.colorScheme = theme;
+            } catch (error) {
+                document.documentElement.dataset.theme = "light";
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="css/styles.css" />
 
     <script type="application/ld+json">
@@ -35,9 +49,7 @@
     <div class="container">
         <div class="nav-wrapper">
             <a class="logo" id="logoLink" href="#" data-i18n-aria="accessibility.home" aria-label="Go to home">
-                <img class="logo-image" src="assets/logo.png" alt="BrainSpark" width="58" height="48" decoding="async">
-
-                <span class="logo-text">PulseReport</span>
+                <img class="logo-image" src="assets/logo.png" alt="BrainSpark" width="152" height="66" decoding="async">
             </a>
 
             <ul class="nav-menu" id="navMenu">
@@ -96,6 +108,25 @@
                         <span class="lang-btn__label">ES</span>
                     </button>
                 </div>
+                <button
+                        type="button"
+                        class="theme-toggle"
+                        id="themeToggle"
+                        data-i18n-aria="accessibility.theme-toggle"
+                        aria-label="Toggle light and dark mode"
+                        aria-pressed="false"
+                >
+                    <span class="theme-toggle__track" aria-hidden="true">
+                        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" focusable="false">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M12 2v2.2M12 19.8V22M4.22 4.22l1.56 1.56M18.22 18.22l1.56 1.56M2 12h2.2M19.8 12H22M4.22 19.78l1.56-1.56M18.22 5.78l1.56-1.56"></path>
+                        </svg>
+                        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" focusable="false">
+                            <path d="M20.2 15.5A8.2 8.2 0 0 1 8.5 3.8 8.7 8.7 0 1 0 20.2 15.5Z"></path>
+                        </svg>
+                        <span class="theme-toggle__thumb"></span>
+                    </span>
+                </button>
                 <a
                         class="nav-login-cta"
                         href="https://front-pulsereport.vercel.app/sign-in"
