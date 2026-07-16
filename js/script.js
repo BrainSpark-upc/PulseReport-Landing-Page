@@ -730,6 +730,98 @@
     });
   }
 
+  function initHandoffFlowMotion() {
+    const section = document.querySelector(".how-it-works");
+    const layout = document.querySelector(".how-it-works-layout");
+    const steps = Array.from(document.querySelectorAll(".step"));
+    const summary = document.querySelector(".visual-summary");
+    const list = summary?.querySelector(".visual-summary__list");
+    const flowItems = Array.from(
+      summary?.querySelectorAll(".visual-summary__list li") || [],
+    );
+
+    if (!section || !layout || !steps.length) return;
+
+    const itemMap = [0, 2, Math.max(flowItems.length - 1, 0)];
+    let activeIndex = -1;
+
+    function setActiveStep(index, options = {}) {
+      const nextIndex = Math.max(0, Math.min(index, steps.length - 1));
+      if (nextIndex === activeIndex && !options.force) return;
+
+      activeIndex = nextIndex;
+      const progress =
+        steps.length > 1 ? nextIndex / Math.max(steps.length - 1, 1) : 0;
+
+      section.style.setProperty("--flow-progress", String(progress));
+      layout.style.setProperty("--flow-progress", String(progress));
+      section.dataset.flowStep = String(nextIndex + 1);
+
+      steps.forEach((stepCard, stepIndex) => {
+        stepCard.classList.toggle("is-active-step", stepIndex === nextIndex);
+        stepCard.classList.toggle("is-before-active", stepIndex < nextIndex);
+      });
+
+      if (!flowItems.length) return;
+
+      const activeItemIndex = Math.min(
+        itemMap[nextIndex] ?? nextIndex,
+        flowItems.length - 1,
+      );
+
+      flowItems.forEach((item, itemIndex) => {
+        item.classList.toggle("is-current", itemIndex === activeItemIndex);
+        item.classList.toggle("is-flow-complete", itemIndex < activeItemIndex);
+      });
+
+      const activeItem = flowItems[activeItemIndex];
+      if (activeItem && list && !options.skipScroll) {
+        const targetTop =
+          activeItem.offsetTop - list.clientHeight / 2 + activeItem.offsetHeight / 2;
+
+        list.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: shouldReduceMotion() ? "auto" : "smooth",
+        });
+      }
+
+      summary?.classList.remove("is-flow-pulsing");
+      window.requestAnimationFrame(() => {
+        summary?.classList.add("is-flow-pulsing");
+      });
+    }
+
+    steps.forEach((stepCard, index) => {
+      stepCard.addEventListener("mouseenter", () =>
+        setActiveStep(index, { skipScroll: true }),
+      );
+      stepCard.addEventListener("focus", () => setActiveStep(index));
+    });
+
+    if (!("IntersectionObserver" in window)) {
+      setActiveStep(0, { force: true });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visible) return;
+        setActiveStep(steps.indexOf(visible.target));
+      },
+      {
+        threshold: [0.3, 0.45, 0.62, 0.78],
+        rootMargin: "-18% 0px -26% 0px",
+      },
+    );
+
+    steps.forEach((stepCard) => observer.observe(stepCard));
+    setActiveStep(0, { force: true, skipScroll: true });
+  }
+
   /* Features / Characteristics section */
   function initFeatureCards() {
     document.querySelectorAll(".feature-card").forEach((card) => {
@@ -1137,6 +1229,7 @@
     initSmoothScroll();
     initProblemCards();
     initStepCards();
+    initHandoffFlowMotion();
     initFeatureCards();
     initTeamCards();
     initTestimonials();
