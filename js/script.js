@@ -21,6 +21,73 @@
     );
   }
 
+  function initThemeToggle() {
+    const STORAGE_KEY = "pulsereport_theme";
+    const toggle = document.getElementById("themeToggle");
+    const themeColorMeta = document.getElementById("themeColorMeta");
+    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const root = document.documentElement;
+
+    function getSavedTheme() {
+      try {
+        return localStorage.getItem(STORAGE_KEY);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function saveTheme(theme) {
+      try {
+        localStorage.setItem(STORAGE_KEY, theme);
+      } catch (error) {
+        // Non-critical: the visual toggle still works without persistence.
+      }
+    }
+
+    function getPreferredTheme() {
+      const saved = getSavedTheme();
+      if (saved === "light" || saved === "dark") return saved;
+      return darkQuery.matches ? "dark" : "light";
+    }
+
+    function applyTheme(theme, shouldAnimate) {
+      const isDark = theme === "dark";
+      root.dataset.theme = theme;
+      root.style.colorScheme = theme;
+
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute("content", isDark ? "#071827" : "#0f766e");
+      }
+
+      if (toggle) {
+        toggle.setAttribute("aria-pressed", String(isDark));
+      }
+
+      if (shouldAnimate && !shouldReduceMotion()) {
+        root.classList.add("theme-is-switching");
+        window.setTimeout(() => {
+          root.classList.remove("theme-is-switching");
+        }, 520);
+      }
+    }
+
+    applyTheme(getPreferredTheme(), false);
+
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+        saveTheme(nextTheme);
+        applyTheme(nextTheme, true);
+      });
+    }
+
+    darkQuery.addEventListener?.("change", (event) => {
+      const saved = getSavedTheme();
+      if (saved === "light" || saved === "dark") return;
+      applyTheme(event.matches ? "dark" : "light", true);
+    });
+  }
+
   function initMobileNav() {
     const toggle = document.getElementById("menuToggle");
     const menu = document.getElementById("navMenu");
@@ -1056,6 +1123,7 @@
   //Boot function
   function boot() {
     initMotionPreference();
+    initThemeToggle();
     initMotionSystem();
     initMobileNav();
     initBackToTop();
