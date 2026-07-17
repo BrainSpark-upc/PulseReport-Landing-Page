@@ -20,7 +20,7 @@ html {
   --color-border: rgba(15, 118, 110, 0.16);
   --color-brand: #0f766e;
   --color-brand-strong: #0b665f;
-  --color-brand-bright: #14b8a6;
+  --color-brand-bright: #159387;
   --color-brand-glow: rgba(20, 184, 166, 0.28);
   --shadow-soft: 0 16px 42px rgba(15, 23, 42, 0.1);
   --shadow-float: 0 24px 70px rgba(15, 118, 110, 0.17);
@@ -559,9 +559,10 @@ section {
 
 .hero-description {
   max-width: 760px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.1rem;
   font-size: 1.08rem;
   color: #e2e8f0;
+  line-height: 1.6;
 }
 
 .hero-buttons {
@@ -587,9 +588,8 @@ section {
 }
 
 .btn-primary {
-  background-color: #14b8a6;
+  background-color: #159387;
   color: #ffffff;
-  box-shadow: 0 10px 24px rgba(20, 184, 166, 0.3);
 }
 
 .btn-primary:hover {
@@ -4459,23 +4459,6 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
   margin-bottom: 1rem;
 }
 
-.footer-pulse::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #5eead4;
-  box-shadow:
-    0 0 12px rgba(45, 212, 191, 0.9),
-    0 0 28px rgba(45, 212, 191, 0.5);
-  offset-path: path("M0,16 L32,16 L44,16 L52,4 L60,28 L68,16 L80,16 L92,16 L100,6 L108,26 L116,16 L160,16");
-  offset-rotate: 0deg;
-  transform: translate(-50%, -50%);
-  animation: footer-vitals-dot 3.2s linear infinite;
-}
 
 .footer-pulse__svg {
   width: 160px;
@@ -5729,8 +5712,7 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
   }
 
   .hero-visual__img-wrap {
-    right: -10px;
-    bottom: -20px;
+    display: none;
   }
 
   .hero-visual__img {
@@ -6051,7 +6033,6 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
 .hero-title__accent {
   display: inline-block;
   color: transparent;
-  background: linear-gradient(110deg, #14b8a6 10%, #67e8f9 45%, #14b8a6 80%);
   background-size: 220% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -6263,20 +6244,14 @@ a.contact-info-card:focus-visible .contact-info-card__arrow {
 
 /* Focused polish pass: hero, handoff flow, and benefits */
 .hero-title__accent {
-  color: #2dd4bf;
+  color: #14b8a6;
   background: none;
   background-clip: initial;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: currentColor;
   animation: none;
-  text-shadow:
-    0 0 22px rgba(45, 212, 191, 0.28),
-    0 10px 34px rgba(6, 182, 212, 0.2);
 }
 
-.hero-description {
-  margin-bottom: 2.1rem;
-}
 
 .hero-visual__img {
   opacity: 0.48;
@@ -7735,13 +7710,10 @@ html:not([data-theme="dark"]) .benefit-item:focus-within {
   html:not(.force-full-motion) .page-intro,
   html:not(.force-full-motion) .page-intro *,
   html:not(.force-full-motion) .hero::after,
-  html:not(.force-full-motion) .hero-title__accent,
-  html:not(.force-full-motion) .hero-visual__img,
   html:not(.force-full-motion) .benefits-shell::after,
   html:not(.force-full-motion) .pricing-bg__orb,
   html:not(.force-full-motion) .team-footer::after,
-  html:not(.force-full-motion) .footer-pulse::after,
-  html:not(.force-full-motion) .footer-pulse__line,
+  /*html:not(.force-full-motion) .footer-pulse__line,*/
   html:not(.force-full-motion) .final-cta__panel::before,
   html:not(.force-full-motion) .final-cta__panel::after,
   html:not(.force-full-motion) .contact::before,

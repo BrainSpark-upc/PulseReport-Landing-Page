@@ -186,41 +186,6 @@
     window.setTimeout(removeIntro, 2200);
   }
 
-  function initHeroParticles() {
-    const hero = document.querySelector(".hero");
-    if (!hero) return;
-
-    const particles = document.createElement("div");
-    particles.className = "hero-particles";
-    particles.setAttribute("aria-hidden", "true");
-
-    const positions = [
-      [7, 30, -1.2, 8.2, 18],
-      [16, 76, -4.1, 9.4, -14],
-      [28, 18, -2.3, 7.8, 12],
-      [39, 68, -6.2, 10.1, -18],
-      [52, 25, -3.4, 8.8, 16],
-      [63, 82, -7.1, 9.7, -12],
-      [74, 16, -5.3, 8.4, 14],
-      [84, 62, -2.6, 10.4, -16],
-      [93, 36, -6.6, 9.1, 11],
-      [67, 48, -1.8, 7.6, -10],
-      [46, 88, -4.7, 8.9, 15],
-      [22, 50, -7.4, 10.2, -13],
-    ];
-
-    positions.forEach(([x, y, delay, duration, drift]) => {
-      const particle = document.createElement("i");
-      particle.style.setProperty("--particle-x", `${x}%`);
-      particle.style.setProperty("--particle-y", `${y}%`);
-      particle.style.setProperty("--particle-delay", `${delay}s`);
-      particle.style.setProperty("--particle-duration", `${duration}s`);
-      particle.style.setProperty("--particle-drift", `${drift}px`);
-      particles.appendChild(particle);
-    });
-
-    hero.appendChild(particles);
-  }
 
   function prepareMotionReveals() {
     const revealGroups = [
@@ -316,55 +281,8 @@
     update();
   }
 
-  function initHeroParallax() {
-    const hero = document.querySelector(".hero");
-    const visual = hero?.querySelector(".hero-visual__img-wrap");
-    if (!hero) return;
 
-    let scrollTicking = false;
 
-    function updateScrollPosition() {
-      const progress = Math.min(
-        window.scrollY / Math.max(hero.offsetHeight, 1),
-        1,
-      );
-      hero.style.setProperty("--hero-bg-shift", `${progress * 28}px`);
-
-      if (visual) {
-        visual.style.setProperty("--hero-scroll-shift", `${progress * 18}px`);
-      }
-
-      scrollTicking = false;
-    }
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (scrollTicking) return;
-        scrollTicking = true;
-        requestAnimationFrame(updateScrollPosition);
-      },
-      { passive: true },
-    );
-
-    if (visual && window.matchMedia("(pointer: fine)").matches) {
-      hero.addEventListener("pointermove", (event) => {
-        const bounds = hero.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-
-        visual.style.setProperty("--hero-pointer-x", `${x * 12}px`);
-        visual.style.setProperty("--hero-pointer-y", `${y * 10}px`);
-      });
-
-      hero.addEventListener("pointerleave", () => {
-        visual.style.setProperty("--hero-pointer-x", "0px");
-        visual.style.setProperty("--hero-pointer-y", "0px");
-      });
-    }
-
-    updateScrollPosition();
-  }
 
   function initInteractiveSurfaces() {
     if (!window.matchMedia("(pointer: fine)").matches) return;
@@ -441,7 +359,6 @@
   function initMotionSystem() {
     document.documentElement.classList.add("motion-enabled");
     initPageIntro();
-    initHeroParticles();
     prepareMotionReveals();
     initScrollProgress();
 
@@ -449,7 +366,6 @@
       return;
     }
 
-    initHeroParallax();
     initInteractiveSurfaces();
     initMagneticControls();
   }
