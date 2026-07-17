@@ -11,6 +11,10 @@
     );
   }
 
+  function shouldUseFullMotionEffects() {
+    return new URLSearchParams(window.location.search).get("motion") === "full";
+  }
+
   function initMotionPreference() {
     const motionMode = new URLSearchParams(window.location.search).get(
       "motion",
@@ -137,7 +141,7 @@
     }
 
     const items = hero.querySelectorAll("[data-hero-anim]");
-    const introDelay = document.querySelector(".page-intro") ? 1.05 : 0;
+    const introDelay = document.querySelector(".page-intro") ? 0.45 : 0;
 
     items.forEach((el, i) => {
       el.style.animationDelay = `${introDelay + i * 0.12 + 0.2}s`;
@@ -185,7 +189,6 @@
     });
     window.setTimeout(removeIntro, 2200);
   }
-
 
   function prepareMotionReveals() {
     const revealGroups = [
@@ -281,9 +284,6 @@
     update();
   }
 
-
-
-
   function initInteractiveSurfaces() {
     if (!window.matchMedia("(pointer: fine)").matches) return;
 
@@ -358,7 +358,11 @@
 
   function initMotionSystem() {
     document.documentElement.classList.add("motion-enabled");
-    initPageIntro();
+
+    if (shouldUseFullMotionEffects()) {
+      initPageIntro();
+    }
+
     prepareMotionReveals();
     initScrollProgress();
 
@@ -366,8 +370,10 @@
       return;
     }
 
-    initInteractiveSurfaces();
-    initMagneticControls();
+    if (shouldUseFullMotionEffects()) {
+      initInteractiveSurfaces();
+      initMagneticControls();
+    }
   }
 
   function initScrollReveal() {
