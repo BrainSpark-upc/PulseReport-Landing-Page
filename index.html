@@ -9,7 +9,7 @@
     <meta name="description" content="PulseReport es una plataforma para centralizar traspasos SBAR, signos vitales, tratamientos y eventos críticos en entornos clínicos." />
     <meta name="keywords" content="PulseReport, BrainSpark, SBAR, salud, enfermería, traspaso clínico, signos vitales, trazabilidad, hospital, clínica" />
     <meta name="theme-color" content="#0f766e" id="themeColorMeta" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
 
     <title>PulseReport | BrainSpark</title>
 
@@ -18,13 +18,12 @@
     <script>
         (function () {
             try {
-                var storedTheme = localStorage.getItem("pulsereport_theme");
-                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-                var theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : prefersDark ? "dark" : "light";
-                document.documentElement.dataset.theme = theme;
-                document.documentElement.style.colorScheme = theme;
+                localStorage.setItem("pulsereport_theme", "light");
+                document.documentElement.dataset.theme = "light";
+                document.documentElement.style.colorScheme = "light";
             } catch (error) {
                 document.documentElement.dataset.theme = "light";
+                document.documentElement.style.colorScheme = "light";
             }
         })();
     </script>
@@ -108,25 +107,6 @@
                         <span class="lang-btn__label">ES</span>
                     </button>
                 </div>
-                <button
-                        type="button"
-                        class="theme-toggle"
-                        id="themeToggle"
-                        data-i18n-aria="accessibility.theme-toggle"
-                        aria-label="Toggle light and dark mode"
-                        aria-pressed="false"
-                >
-                    <span class="theme-toggle__track" aria-hidden="true">
-                        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" focusable="false">
-                            <circle cx="12" cy="12" r="4"></circle>
-                            <path d="M12 2v2.2M12 19.8V22M4.22 4.22l1.56 1.56M18.22 18.22l1.56 1.56M2 12h2.2M19.8 12H22M4.22 19.78l1.56-1.56M18.22 5.78l1.56-1.56"></path>
-                        </svg>
-                        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" focusable="false">
-                            <path d="M20.2 15.5A8.2 8.2 0 0 1 8.5 3.8 8.7 8.7 0 1 0 20.2 15.5Z"></path>
-                        </svg>
-                        <span class="theme-toggle__thumb"></span>
-                    </span>
-                </button>
                 <button type="button" class="menu-toggle" id="menuToggle" data-i18n-aria="accessibility.open-menu" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
