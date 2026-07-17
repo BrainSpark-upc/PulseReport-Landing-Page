@@ -15,6 +15,8 @@
 
     <link rel="canonical" href="https://front-pulsereport.vercel.app/sign-in">
     <link rel="icon" type="image/png" href="assets/pestana-logo.png" />
+    <link rel="preload" as="image" href="assets/hero-healthcare.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/stethoscope-with-heart-drawing.webp" type="image/webp" fetchpriority="high" />
     <script>
         (function () {
             try {
@@ -48,7 +50,7 @@
     <div class="container">
         <div class="nav-wrapper">
             <a class="logo" id="logoLink" href="#" data-i18n-aria="accessibility.home" aria-label="Go to home">
-                <img class="logo-image" src="assets/logo.png" alt="BrainSpark" width="152" height="66" decoding="async">
+                <img class="logo-image" src="assets/logo-optimized.png" alt="BrainSpark" width="152" height="66" decoding="async" fetchpriority="high">
             </a>
 
             <ul class="nav-menu" id="navMenu">
@@ -161,13 +163,14 @@
 
                 <!-- Floating stethoscope image -->
                 <div class="hero-visual__img-wrap" aria-hidden="true">
-                    <img src="assets/stethoscope-with-heart-drawing.png"
+                    <img src="assets/stethoscope-with-heart-drawing.webp"
                          alt=""
                          class="hero-visual__img"
                          width="1000"
                          height="1000"
                          loading="eager"
-                         decoding="async">
+                         decoding="async"
+                         fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -675,7 +678,7 @@
 
                     <aside class="benefits-visual reveal-on-scroll" data-reveal-delay="120" data-i18n-aria="benefits.summary.aria" aria-label="Resumen del impacto clínico">
                         <div class="benefits-visual__image">
-                            <img src="assets/clinic-medical-staff.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async" aria-hidden="true">
+                            <img src="assets/clinic-medical-staff.webp" alt="" width="900" height="520" loading="lazy" decoding="async" aria-hidden="true">
                             <div class="benefits-visual__overlay">
                                 <span class="benefits-visual__badge" data-i18n="benefits.summary.badge">Claridad clínica disponible las 24 horas del día</span>
                                 <strong data-i18n="benefits.summary.title">Una sola fuente de control</strong>
@@ -735,7 +738,7 @@
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
-                                src="assets/Adrian-photo.jpg"
+                                src="assets/Adrian-photo.webp"
                                 alt="Adrian Rios"
                                 width="400" height="440"
                                 loading="lazy"
@@ -754,7 +757,7 @@
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
-                                src="assets/Alex-photo.jpg"
+                                src="assets/Alex-photo.webp"
                                 alt="Alexander Aliaga"
                                 width="400" height="440"
                                 loading="lazy"
@@ -773,7 +776,7 @@
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
-                                src="assets/Anhelo-photo.jpg"
+                                src="assets/Anhelo-photo.webp"
                                 alt="Anhelo"
                                 width="400" height="440"
                                 loading="lazy"
@@ -792,7 +795,7 @@
                     <div class="team-card__photo-wrap">
                         <img
                                 class="team-card__photo"
-                                src="assets/Johan-photo.png"
+                                src="assets/Johan-photo.webp"
                                 alt="Johan"
                                 width="400" height="440"
                                 loading="lazy"
@@ -811,7 +814,7 @@
                     <div class="team-card__photo-wrap">
                         <img
                         class="team-card__photo"
-                        src="assets/Carlos-photo.jpg"
+                        src="assets/Carlos-photo.webp"
                         alt="Carlos"
                         width="400" height="440"
                         loading="lazy"
@@ -1581,7 +1584,7 @@
                 <!-- Col 1: Brand -->
                 <div class="footer-brand-col">
                     <a href="#" class="footer-logo" aria-label="PulseReport — go to top">
-                        <img src="assets/logo.png" alt="PulseReport logo" class="footer-logo__img" width="48" height="40" loading="lazy">
+                        <img src="assets/logo-optimized.png" alt="PulseReport logo" class="footer-logo__img" width="48" height="40" loading="lazy" decoding="async">
                         <span class="footer-logo__text">PulseReport</span>
                     </a>
 
@@ -1757,7 +1760,7 @@
 </div>
 
 
-<script src="js/i18n.js"></script>
-<script src="js/script.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/script.js" defer></script>
 </body>
 </html>

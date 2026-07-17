@@ -11,6 +11,10 @@
     );
   }
 
+  function shouldUseFullMotionEffects() {
+    return new URLSearchParams(window.location.search).get("motion") === "full";
+  }
+
   function initMotionPreference() {
     const motionMode = new URLSearchParams(window.location.search).get(
       "motion",
@@ -137,7 +141,7 @@
     }
 
     const items = hero.querySelectorAll("[data-hero-anim]");
-    const introDelay = document.querySelector(".page-intro") ? 1.05 : 0;
+    const introDelay = document.querySelector(".page-intro") ? 0.45 : 0;
 
     items.forEach((el, i) => {
       el.style.animationDelay = `${introDelay + i * 0.12 + 0.2}s`;
@@ -198,15 +202,7 @@
       [7, 30, -1.2, 8.2, 18],
       [16, 76, -4.1, 9.4, -14],
       [28, 18, -2.3, 7.8, 12],
-      [39, 68, -6.2, 10.1, -18],
-      [52, 25, -3.4, 8.8, 16],
       [63, 82, -7.1, 9.7, -12],
-      [74, 16, -5.3, 8.4, 14],
-      [84, 62, -2.6, 10.4, -16],
-      [93, 36, -6.6, 9.1, 11],
-      [67, 48, -1.8, 7.6, -10],
-      [46, 88, -4.7, 8.9, 15],
-      [22, 50, -7.4, 10.2, -13],
     ];
 
     positions.forEach(([x, y, delay, duration, drift]) => {
@@ -347,14 +343,34 @@
       { passive: true },
     );
 
-    if (visual && window.matchMedia("(pointer: fine)").matches) {
-      hero.addEventListener("pointermove", (event) => {
+    if (
+      visual &&
+      shouldUseFullMotionEffects() &&
+      window.matchMedia("(pointer: fine)").matches
+    ) {
+      let pointerTicking = false;
+      let pendingPointer = null;
+
+      function updatePointerPosition() {
+        if (!pendingPointer) {
+          pointerTicking = false;
+          return;
+        }
+
         const bounds = hero.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        const x = (pendingPointer.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (pendingPointer.clientY - bounds.top) / bounds.height - 0.5;
 
         visual.style.setProperty("--hero-pointer-x", `${x * 12}px`);
         visual.style.setProperty("--hero-pointer-y", `${y * 10}px`);
+        pointerTicking = false;
+      }
+
+      hero.addEventListener("pointermove", (event) => {
+        pendingPointer = event;
+        if (pointerTicking) return;
+        pointerTicking = true;
+        requestAnimationFrame(updatePointerPosition);
       });
 
       hero.addEventListener("pointerleave", () => {
@@ -440,8 +456,12 @@
 
   function initMotionSystem() {
     document.documentElement.classList.add("motion-enabled");
-    initPageIntro();
-    initHeroParticles();
+
+    if (shouldUseFullMotionEffects()) {
+      initPageIntro();
+      initHeroParticles();
+    }
+
     prepareMotionReveals();
     initScrollProgress();
 
@@ -450,8 +470,11 @@
     }
 
     initHeroParallax();
-    initInteractiveSurfaces();
-    initMagneticControls();
+
+    if (shouldUseFullMotionEffects()) {
+      initInteractiveSurfaces();
+      initMagneticControls();
+    }
   }
 
   function initScrollReveal() {

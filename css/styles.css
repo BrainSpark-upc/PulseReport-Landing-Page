@@ -513,7 +513,11 @@ section {
   align-items: center;
   background:
     linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.6)),
-    url("../assets/hero-healthcare.jpg") center / cover no-repeat;
+    image-set(
+        url("../assets/hero-healthcare.webp") type("image/webp"),
+        url("../assets/hero-healthcare.jpg") type("image/jpeg")
+      )
+      center / cover no-repeat;
   color: #ffffff;
   padding: clamp(6rem, 11vh, 8.25rem) 0 clamp(4rem, 8vh, 5rem);
   overflow: hidden;
@@ -1701,7 +1705,12 @@ html[data-theme="dark"] .visual-summary__viewport {
   right: 0;
   width: min(52vw, 760px);
   height: 52%;
-  background: url("../assets/hero-healthcare.jpg") center / cover no-repeat;
+  background:
+    image-set(
+        url("../assets/hero-healthcare.webp") type("image/webp"),
+        url("../assets/hero-healthcare.jpg") type("image/jpeg")
+      )
+      center / cover no-repeat;
   opacity: 0.12;
   pointer-events: none;
 }
@@ -7762,6 +7771,41 @@ html:not([data-theme="dark"]) .benefit-item:focus-within {
   background: #ffffff;
   box-shadow: 0 16px 34px rgba(15, 23, 42, 0.075);
   transform: translateY(-2px);
+}
+
+/* Performance pass: keep motion polished, but avoid expensive paint work. */
+section:not(.hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+.navbar {
+  backdrop-filter: blur(8px);
+}
+
+.how-it-works-layout,
+.benefits-shell,
+.final-cta__panel,
+.pricing-card,
+.modal-overlay {
+  backdrop-filter: none;
+}
+
+.motion-enabled .reveal-on-scroll {
+  filter: none;
+}
+
+.hero-visual__img {
+  filter: none;
+}
+
+.motion-surface__glow,
+.benefits-shell::after,
+.how-it-works-image-frame::after,
+.problem::before,
+.problem::after,
+.testimonials::before {
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
